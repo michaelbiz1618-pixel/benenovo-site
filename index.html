@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BENENOVO Supply Chain Solutions | Official Site</title>
-    <meta name="description" content="Precision Sourcing and China OEM of food. Bio-Tech Powered.">
+    <title>BENENOVO Supply Chain Solutions | Bio-Tech Powered</title>
+    <meta name="description" content="Precision Sourcing and China OEM of food. Bio-Tech Powered. Led by 17-year industry veteran Michael Biz.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 品牌标准字体：Open Sans -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 字体升级：引入 Open Sans 全家桶 -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* 1. 字体系统严格遵循附件三 */
+        /* 1. 字体系统：严格遵循手册 */
         body { font-family: 'Open Sans', sans-serif; }
         
-        /* 2. 颜色系统严格遵循附件二 */
+        /* 2. 颜色系统：严格遵循附件二 */
         :root {
-            --rational-blue: #0A3A5A;   /* 主品牌色 */
+            --rational-blue: #0A3A5A;   /* 主品牌色 Deep Rational Blue */
             --level1-blue: #1F5C85;     /* 辅助蓝 L1 */
             --level2-blue: #4F7FA3;     /* 辅助蓝 L2 */
             --bg-blue: #E6EEF4;         /* 背景蓝 */
@@ -25,68 +25,96 @@
 
         .text-rational { color: var(--rational-blue); }
         .bg-rational { background-color: var(--rational-blue); }
-        .text-level1 { color: var(--level1-blue); }
-        .bg-level1 { background-color: var(--level1-blue); }
         .bg-surface { background-color: var(--bg-blue); }
         
-        /* 3. Logo 标准构造 (附件四核心规范) */
+        /* 3. Logo 标准构造 */
         .logo-container {
             display: flex;
             flex-direction: column;
-            line-height: 1;
+            line-height: 0.85; 
+            padding-top: 4px; 
         }
+        
         .logo-main {
             font-family: 'Open Sans', sans-serif;
-            font-weight: 500; /* Medium */
+            font-weight: 600; 
             color: var(--rational-blue);
-            font-size: 1.8rem; 
-            letter-spacing: 0.02em;
+            font-size: 2rem; /* 移动端默认稍微小一点，适配窄屏 */
+            letter-spacing: 0.01em; 
         }
+        
         .logo-sub {
             font-family: 'Open Sans', sans-serif;
-            font-weight: 400; /* Regular */
+            font-weight: 400; 
             color: var(--rational-blue);
-            font-size: 1.1rem; /* 约为主标题的 60%-80% */
-            margin-top: 2px;
-            /* 关键法规：向右偏移，对齐主标题后半段 (视觉对齐) */
+            font-size: 1.1rem; 
+            margin-top: 2px;   
             align-self: flex-end; 
+            opacity: 0.95; 
+            letter-spacing: 0.02em; 
+            white-space: nowrap; /* 防止换行 */
+        }
+
+        /* 响应式字体调整 */
+        @media (min-width: 768px) {
+            .logo-main { font-size: 2.2rem; }
+            .logo-sub { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body class="bg-white text-[#2E2E2E]">
 
-    <!-- NAV (White Background per Annex 4) -->
-    <nav class="fixed w-full z-50 bg-white border-b border-[#DADADA]">
-        <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
-            <!-- 品牌标识区域：严格遵循“双行右偏”结构 -->
-            <a href="#" class="logo-container group">
+    <!-- NAV -->
+    <nav class="fixed w-full z-50 bg-white/98 backdrop-blur-md border-b border-[#DADADA]">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center relative">
+            <!-- 品牌标识区域 -->
+            <a href="#" class="logo-container group z-50">
                 <span class="logo-main">BENENOVO</span>
                 <span class="logo-sub">Supply Chain</span>
             </a>
             
-            <!-- 桌面端菜单 -->
+            <!-- 桌面端菜单 (Desktop Menu) - 手机上隐藏 -->
             <div class="hidden md:flex gap-10 text-sm font-medium text-[#6B6B6B]">
                 <a href="#about" class="hover:text-[#0A3A5A] transition-colors">Who We Are</a>
                 <a href="#services" class="hover:text-[#0A3A5A] transition-colors">Services</a>
                 <a href="#contact" class="hover:text-[#0A3A5A] transition-colors">Contact</a>
             </div>
 
-            <!-- CTA 按钮：使用辅助蓝 Level 2 (附件三规范) -->
+            <!-- CTA 按钮 (Desktop) - 手机上隐藏 -->
             <a href="https://www.linkedin.com/in/michael-bao-1172b991" target="_blank" class="hidden md:inline-flex px-6 py-2.5 bg-[#4F7FA3] text-white rounded text-sm font-medium hover:bg-[#1F5C85] transition shadow-sm">
                 Connect on LinkedIn
             </a>
+
+            <!-- 移动端汉堡按钮 (Mobile Hamburger Button) - 仅手机显示 -->
+            <button id="mobile-menu-btn" class="md:hidden z-50 text-[#0A3A5A] focus:outline-none p-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- 移动端下拉菜单 (Mobile Dropdown) -->
+        <div id="mobile-menu" class="hidden absolute top-24 left-0 w-full bg-white border-b border-[#DADADA] shadow-xl md:hidden flex-col">
+            <a href="#about" class="block px-8 py-4 text-[#0A3A5A] font-medium hover:bg-[#E6EEF4] border-t border-gray-100">Who We Are</a>
+            <a href="#services" class="block px-8 py-4 text-[#0A3A5A] font-medium hover:bg-[#E6EEF4] border-t border-gray-100">Services</a>
+            <a href="#contact" class="block px-8 py-4 text-[#0A3A5A] font-medium hover:bg-[#E6EEF4] border-t border-gray-100">Contact</a>
+            <div class="p-6 bg-[#F8FAFC]">
+                <a href="https://www.linkedin.com/in/michael-bao-1172b991" target="_blank" class="block w-full text-center px-6 py-3 bg-[#4F7FA3] text-white rounded font-medium hover:bg-[#1F5C85]">
+                    Connect on LinkedIn
+                </a>
+            </div>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
     <header class="pt-40 pb-24 px-6 bg-surface relative overflow-hidden">
         <div class="max-w-5xl mx-auto">
-            <!-- 标签：使用辅助蓝 Level 1 -->
+            <!-- 标签 -->
             <div class="inline-block px-4 py-1.5 border border-[#1F5C85] text-[#1F5C85] text-xs font-bold tracking-[0.15em] mb-8 uppercase">
                 Bio-Tech Powered
             </div>
             
-            <!-- 主标题：使用深理性蓝 -->
+            <!-- 主标题 -->
             <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1] text-rational">
                 Precision Sourcing.<br>
                 Operational Consistency.
@@ -107,18 +135,18 @@
             </div>
         </div>
         
-        <!-- 极简装饰：不使用渐变，使用纯色块 (符合附件四 PPT 规范的延伸) -->
+        <!-- 装饰 -->
         <div class="absolute top-0 right-0 w-1/3 h-full bg-[#dae6f0] -z-10 skew-x-12 opacity-50 hidden md:block"></div>
     </header>
 
-    <!-- ABOUT: 理性与秩序 -->
+    <!-- ABOUT SECTION -->
     <section id="about" class="py-24 px-6 border-b border-[#DADADA]">
-        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
                 <h2 class="text-3xl font-bold mb-6 text-rational">Strategic Eyes on the Ground.</h2>
                 <div class="space-y-6 text-[#2E2E2E] leading-relaxed">
                     <p>
-                        After <strong class="text-rational">17 years</strong> on the front lines, Michael Biz realized one truth: The biggest risk isn't price, it's <strong>Operational Consistency</strong>.
+                        After <strong class="text-rational">17 years</strong> on the front lines of China's food & life science manufacturing, Michael Biz realized one truth: The biggest risk isn't price, it's <strong>Operational Consistency</strong>.
                     </p>
                     <p>
                         Global brands struggle to find Chinese partners who can perfectly translate niche standards (Clean Label, ESG) into mass production. 
@@ -130,7 +158,7 @@
                     </div>
                 </div>
             </div>
-            <!-- 数据模块：使用背景蓝 -->
+            <!-- 数据模块 -->
             <div class="bg-surface p-10 rounded-lg flex flex-col justify-center gap-8">
                 <div>
                     <div class="text-sm font-bold text-[#6B6B6B] uppercase tracking-wider mb-1">Experience</div>
@@ -146,7 +174,7 @@
         </div>
     </section>
 
-    <!-- SERVICES: 双轨制卡片 -->
+    <!-- SERVICES SECTION -->
     <section id="services" class="py-24 px-6 bg-white">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
@@ -192,10 +220,10 @@
         </div>
     </section>
 
-    <!-- FOOTER: 使用深理性蓝 -->
-    <footer class="py-16 px-6 bg-rational text-white text-center">
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 px-6 bg-rational text-white text-center">
         <div class="max-w-3xl mx-auto">
-            <h2 class="text-2xl font-bold mb-8">Ready to align your supply chain?</h2>
+            <h2 class="text-2xl font-bold mb-8">Ready to de-risk your China supply chain?</h2>
             <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
                 <a href="mailto:service@supply.benenovo.com" class="px-8 py-3 bg-white text-rational rounded font-bold hover:bg-[#E6EEF4] transition">
                     Email: service@supply.benenovo.com
@@ -210,7 +238,28 @@
                 A Bio-Tech Powered Industrial Platform.
             </p>
         </div>
-    </footer>
+    </section>
+
+    <!-- 移动端菜单控制脚本 -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = menu.querySelectorAll('a');
+
+        // 点击按钮切换菜单
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+
+        // 点击链接后自动收起菜单
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+            });
+        });
+    </script>
 
 </body>
 </html>
