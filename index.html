@@ -3,176 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BENENOVO Supply Chain Solutions | Bio-Tech Powered</title>
-    <meta name="description" content="Precision Sourcing and China OEM of food. Bio-Tech Powered. Led by 17-year industry veteran Michael Biz.">
+    <title>BENENOVO Supply Chain Solutions | Official Site</title>
+    <meta name="description" content="Precision Sourcing and China OEM of food. Bio-Tech Powered.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 字体升级：Open Sans (Humanist Sans Serif) -->
+    <!-- 品牌标准字体：Open Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* 字体系统：Open Sans */
-        body { font-family: 'Open Sans', sans-serif; scroll-behavior: smooth; }
+        /* 1. 字体系统严格遵循附件三 */
+        body { font-family: 'Open Sans', sans-serif; }
         
-        /* 主品牌色：Deep Rational Blue */
-        .bg-brand-primary { background-color: #0A3A5A; }
-        .text-brand-primary { color: #0A3A5A; }
-        .border-brand-primary { border-color: #0A3A5A; }
+        /* 2. 颜色系统严格遵循附件二 */
+        :root {
+            --rational-blue: #0A3A5A;   /* 主品牌色 */
+            --level1-blue: #1F5C85;     /* 辅助蓝 L1 */
+            --level2-blue: #4F7FA3;     /* 辅助蓝 L2 */
+            --bg-blue: #E6EEF4;         /* 背景蓝 */
+            --text-dark: #2E2E2E;       /* 正文深灰 */
+            --text-grey: #6B6B6B;       /* 辅助中灰 */
+            --line-grey: #DADADA;       /* 分割线 */
+        }
 
-        /* 辅助色阶 */
-        .bg-brand-aux1 { background-color: #1F5C85; } /* Level 1 */
-        .bg-brand-aux2 { background-color: #4F7FA3; } /* Level 2 */
-        .bg-brand-bg { background-color: #E6EEF4; }   /* Background Blue */
-
-        .gradient-text {
-            background: linear-gradient(to right, #4F7FA3, #10b981);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .text-rational { color: var(--rational-blue); }
+        .bg-rational { background-color: var(--rational-blue); }
+        .text-level1 { color: var(--level1-blue); }
+        .bg-level1 { background-color: var(--level1-blue); }
+        .bg-surface { background-color: var(--bg-blue); }
+        
+        /* 3. Logo 标准构造 (附件四核心规范) */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+        .logo-main {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 500; /* Medium */
+            color: var(--rational-blue);
+            font-size: 1.8rem; 
+            letter-spacing: 0.02em;
+        }
+        .logo-sub {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400; /* Regular */
+            color: var(--rational-blue);
+            font-size: 1.1rem; /* 约为主标题的 60%-80% */
+            margin-top: 2px;
+            /* 关键法规：向右偏移，对齐主标题后半段 (视觉对齐) */
+            align-self: flex-end; 
         }
     </style>
 </head>
-<body class="bg-[#E6EEF4]/30 text-[#2E2E2E]"> <!-- 使用品牌手册中的深灰和背景蓝微调 -->
+<body class="bg-white text-[#2E2E2E]">
 
-    <!-- NAV -->
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#DADADA]">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
-            <!-- LOGO -->
-            <a href="#" class="flex items-center">
-                <img src="BENENOVO.png" alt="BENENOVO Group" class="h-8 w-auto object-contain">
+    <!-- NAV (White Background per Annex 4) -->
+    <nav class="fixed w-full z-50 bg-white border-b border-[#DADADA]">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
+            <!-- 品牌标识区域：严格遵循“双行右偏”结构 -->
+            <a href="#" class="logo-container group">
+                <span class="logo-main">BENENOVO</span>
+                <span class="logo-sub">Supply Chain</span>
             </a>
             
-            <div class="hidden md:flex gap-8 text-sm font-semibold text-[#6B6B6B]">
-                <a href="#about" class="hover:text-[#0A3A5A] transition">Who We Are</a>
-                <a href="#services" class="hover:text-[#0A3A5A] transition">Services</a>
-                <a href="#contact" class="hover:text-[#0A3A5A] transition">Contact</a>
+            <!-- 桌面端菜单 -->
+            <div class="hidden md:flex gap-10 text-sm font-medium text-[#6B6B6B]">
+                <a href="#about" class="hover:text-[#0A3A5A] transition-colors">Who We Are</a>
+                <a href="#services" class="hover:text-[#0A3A5A] transition-colors">Services</a>
+                <a href="#contact" class="hover:text-[#0A3A5A] transition-colors">Contact</a>
             </div>
-            <!-- CTA Button using Auxiliary Color Level 1 -->
-            <a href="https://www.linkedin.com/in/michael-bao-1172b991" target="_blank" class="px-5 py-2 bg-[#0A3A5A] text-white rounded-full text-sm font-medium hover:bg-[#1F5C85] transition">Connect on LinkedIn</a>
+
+            <!-- CTA 按钮：使用辅助蓝 Level 2 (附件三规范) -->
+            <a href="https://www.linkedin.com/in/michael-bao-1172b991" target="_blank" class="hidden md:inline-flex px-6 py-2.5 bg-[#4F7FA3] text-white rounded text-sm font-medium hover:bg-[#1F5C85] transition shadow-sm">
+                Connect on LinkedIn
+            </a>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <header class="pt-32 pb-24 px-6 bg-brand-primary text-white relative overflow-hidden">
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <div class="inline-block px-4 py-1 rounded-full bg-white/10 border border-white/20 text-[#4F7FA3] text-xs font-bold tracking-[0.2em] mb-6 uppercase text-blue-200">
-                Supply Chain Architect
+    <header class="pt-40 pb-24 px-6 bg-surface relative overflow-hidden">
+        <div class="max-w-5xl mx-auto">
+            <!-- 标签：使用辅助蓝 Level 1 -->
+            <div class="inline-block px-4 py-1.5 border border-[#1F5C85] text-[#1F5C85] text-xs font-bold tracking-[0.15em] mb-8 uppercase">
+                Bio-Tech Powered
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+            
+            <!-- 主标题：使用深理性蓝 -->
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1] text-rational">
                 Precision Sourcing.<br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#4F7FA3] to-emerald-400">Bio-Tech Powered.</span>
+                Operational Consistency.
             </h1>
-            <p class="text-xl text-[#E6EEF4] max-w-2xl mx-auto font-light leading-relaxed mb-10">
-                We bridge the gap between global standards and Chinese manufacturing. 
+            
+            <p class="text-xl text-[#6B6B6B] max-w-2xl font-normal leading-relaxed mb-12">
+                We bridge the gap between global standards and Chinese manufacturing reality. 
                 Solving the "Matching Problem" for forward-thinking brands.
             </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#contact" class="px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl font-semibold transition shadow-lg shadow-emerald-500/30">
-                    Get a Quote
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#contact" class="px-8 py-4 bg-rational text-white rounded font-semibold hover:bg-[#06263b] transition shadow-lg text-center">
+                    Start Mapping Capability
                 </a>
-                <a href="#about" class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-xl font-semibold transition backdrop-blur-sm">
-                    Our Philosophy
+                <a href="#services" class="px-8 py-4 bg-white border border-[#DADADA] text-rational rounded font-semibold hover:bg-gray-50 transition text-center">
+                    Explore Solutions
                 </a>
             </div>
         </div>
-        <!-- Decor -->
-        <div class="absolute top-0 left-0 w-96 h-96 bg-[#1F5C85]/30 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-emerald-600/20 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2"></div>
+        
+        <!-- 极简装饰：不使用渐变，使用纯色块 (符合附件四 PPT 规范的延伸) -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-[#dae6f0] -z-10 skew-x-12 opacity-50 hidden md:block"></div>
     </header>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="py-24 px-6">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <!-- ABOUT: 理性与秩序 -->
+    <section id="about" class="py-24 px-6 border-b border-[#DADADA]">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
             <div>
-                <h2 class="text-3xl font-bold mb-6 text-brand-primary">More Than A Trader.<br>We Are Your Strategic Eye.</h2>
+                <h2 class="text-3xl font-bold mb-6 text-rational">Strategic Eyes on the Ground.</h2>
                 <div class="space-y-6 text-[#2E2E2E] leading-relaxed">
                     <p>
-                        After <strong class="text-black">17 years</strong> on the front lines of China's food & life science manufacturing, we realized one truth: The biggest risk isn't price, it's <strong>Operational Consistency</strong>.
+                        After <strong class="text-rational">17 years</strong> on the front lines, Michael Biz realized one truth: The biggest risk isn't price, it's <strong>Operational Consistency</strong>.
                     </p>
                     <p>
                         Global brands struggle to find Chinese partners who can perfectly translate niche standards (Clean Label, ESG) into mass production. 
                     </p>
-                    <p>
-                        <strong>BENENOVO</strong> acts as a specialized <em>Curator and Liaison</em>. We don't just move boxes; we filter the noise, audit the reality, and deliver the hidden champions of Chinese Bio-Tech.
-                    </p>
-                </div>
-                <div class="mt-8 flex gap-8">
-                    <div>
-                        <div class="text-3xl font-bold text-[#1F5C85]">17+</div>
-                        <div class="text-xs uppercase font-bold text-[#6B6B6B]">Years Exp</div>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-bold text-emerald-600">Zero</div>
-                        <div class="text-xs uppercase font-bold text-[#6B6B6B]">Compromise</div>
+                    <div class="pl-4 border-l-4 border-[#1F5C85] py-2">
+                        <p class="italic text-[#6B6B6B]">
+                            "We don't just move boxes; we act as a Curator and Liaison to ensure technical alignment."
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="bg-brand-bg rounded-3xl p-8 h-full min-h-[400px] relative overflow-hidden flex items-center justify-center">
-                <!-- Abstract Visual -->
-                <div class="absolute inset-0 bg-gradient-to-br from-white to-[#E6EEF4]"></div>
-                <div class="relative z-10 text-center">
-                    <div class="text-6xl mb-4">🧬 + 🏭</div>
-                    <div class="font-bold text-[#0A3A5A] text-xl">The Perfect Match</div>
-                    <p class="text-sm text-[#6B6B6B] mt-2">Bio-Tech Innovation × Factory Scale</p>
+            <!-- 数据模块：使用背景蓝 -->
+            <div class="bg-surface p-10 rounded-lg flex flex-col justify-center gap-8">
+                <div>
+                    <div class="text-sm font-bold text-[#6B6B6B] uppercase tracking-wider mb-1">Experience</div>
+                    <div class="text-4xl font-bold text-rational">17+ Years</div>
+                </div>
+                <div class="w-full h-px bg-[#DADADA]"></div>
+                <div>
+                    <div class="text-sm font-bold text-[#6B6B6B] uppercase tracking-wider mb-1">Philosophy</div>
+                    <div class="text-4xl font-bold text-[#1F5C85]">Zero Gap</div>
+                    <div class="text-sm text-[#6B6B6B] mt-1">Between COA and Reality</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="py-24 px-6 bg-[#E6EEF4]/50">
-        <div class="max-w-6xl mx-auto">
+    <!-- SERVICES: 双轨制卡片 -->
+    <section id="services" class="py-24 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-brand-primary">Dual-Track Solutions</h2>
+                <h2 class="text-3xl font-bold text-rational">Dual-Track Solutions</h2>
                 <p class="text-[#6B6B6B] mt-4">Tailored strategies for different business models.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white p-10 rounded-3xl shadow-sm border-t-4 border-[#1F5C85] hover:shadow-xl transition duration-300">
-                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-2xl mb-6">🚢</div>
-                    <h3 class="text-xl font-bold mb-3 text-brand-primary">For Distributors</h3>
-                    <p class="text-sm text-[#6B6B6B] font-bold mb-6 uppercase tracking-wider">Your Technical Back-end</p>
-                    <ul class="space-y-3 text-[#2E2E2E]">
-                        <li class="flex gap-3"><span class="text-[#4F7FA3]">✓</span> Access to exclusive Bio-Tech ingredients</li>
-                        <li class="flex gap-3"><span class="text-[#4F7FA3]">✓</span> Technical documentation support</li>
-                        <li class="flex gap-3"><span class="text-[#4F7FA3]">✓</span> Margin optimization strategies</li>
+                <!-- Track A -->
+                <div class="p-8 border border-[#DADADA] hover:border-rational transition duration-300 bg-white group">
+                    <div class="text-xs font-bold text-[#1F5C85] uppercase mb-4 tracking-widest">For Distributors</div>
+                    <h3 class="text-2xl font-bold mb-4 text-rational group-hover:translate-x-1 transition-transform">Technical Back-end</h3>
+                    <ul class="space-y-4 text-[#2E2E2E]">
+                        <li class="flex gap-3 text-sm">
+                            <span class="text-[#1F5C85] font-bold">01</span> Exclusive Bio-Tech ingredients sourcing
+                        </li>
+                        <li class="flex gap-3 text-sm">
+                            <span class="text-[#1F5C85] font-bold">02</span> Technical documentation translation
+                        </li>
+                        <li class="flex gap-3 text-sm">
+                            <span class="text-[#1F5C85] font-bold">03</span> Margin optimization strategies
+                        </li>
                     </ul>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-white p-10 rounded-3xl shadow-sm border-t-4 border-emerald-500 hover:shadow-xl transition duration-300">
-                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-2xl mb-6">🚀</div>
-                    <h3 class="text-xl font-bold mb-3 text-brand-primary">For Brand Owners</h3>
-                    <p class="text-sm text-[#6B6B6B] font-bold mb-6 uppercase tracking-wider">Your Virtual Supply Chain VP</p>
-                    <ul class="space-y-3 text-[#2E2E2E]">
-                        <li class="flex gap-3"><span class="text-emerald-600">✓</span> Full OEM/ODM Management</li>
-                        <li class="flex gap-3"><span class="text-emerald-600">✓</span> Formulation & R&D Alignment</li>
-                        <li class="flex gap-3"><span class="text-emerald-600">✓</span> Operational Stability Audits</li>
+                <!-- Track B -->
+                <div class="p-8 bg-surface border border-transparent hover:border-rational transition duration-300 group">
+                    <div class="text-xs font-bold text-[#1F5C85] uppercase mb-4 tracking-widest">For Brand Owners</div>
+                    <h3 class="text-2xl font-bold mb-4 text-rational group-hover:translate-x-1 transition-transform">Virtual Supply Chain VP</h3>
+                    <ul class="space-y-4 text-[#2E2E2E]">
+                        <li class="flex gap-3 text-sm">
+                            <span class="text-[#1F5C85] font-bold">01</span> Full OEM/ODM Management
+                        </li>
+                        <li class="flex gap-3 text-sm">
+                            <span class="text-[#1F5C85] font-bold">02</span> Formulation & R&D Alignment
+                        </li>
+                        <li class="flex gap-3 text-sm">
+                            <span class="text-[#1F5C85] font-bold">03</span> Operational Stability Audits
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="py-24 px-6 bg-brand-primary text-white text-center">
+    <!-- FOOTER: 使用深理性蓝 -->
+    <footer class="py-16 px-6 bg-rational text-white text-center">
         <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold mb-6">Ready to de-risk your China supply chain?</h2>
-            <p class="text-[#E6EEF4] mb-10 text-lg">
-                Whether you need a specific ingredient or a full OEM solution, Michael is ready to listen.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="mailto:service@supply.benenovo.com" class="px-8 py-4 bg-white text-[#0A3A5A] rounded-xl font-bold hover:bg-[#E6EEF4] transition">
-                    Email Us: service@supply.benenovo.com
+            <h2 class="text-2xl font-bold mb-8">Ready to align your supply chain?</h2>
+            <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
+                <a href="mailto:service@supply.benenovo.com" class="px-8 py-3 bg-white text-rational rounded font-bold hover:bg-[#E6EEF4] transition">
+                    Email: service@supply.benenovo.com
                 </a>
-                <a href="https://www.linkedin.com/in/michael-bao-1172b991" target="_blank" class="px-8 py-4 border border-white/20 rounded-xl font-bold hover:bg-white/10 transition">
-                    Message Michael on LinkedIn
+                <a href="https://www.linkedin.com/in/michael-bao-1172b991" target="_blank" class="px-8 py-3 border border-white/30 text-white rounded font-bold hover:bg-white/10 transition">
+                    LinkedIn Profile
                 </a>
             </div>
-            <p class="mt-12 text-xs text-[#E6EEF4]/60">
-                © 2026 BENENOVO Supply Chain Solutions Co., Ltd. <br>
-                Beijing • Bangkok • Global
+            <div class="w-12 h-1 bg-[#1F5C85] mx-auto mb-8"></div>
+            <p class="text-sm text-white/60">
+                © 2026 BENENOVO Supply Chain Solutions Co., Ltd.<br>
+                A Bio-Tech Powered Industrial Platform.
             </p>
         </div>
-    </section>
+    </footer>
 
 </body>
 </html>
