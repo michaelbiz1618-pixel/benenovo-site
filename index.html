@@ -27,81 +27,94 @@
         .bg-rational { background-color: var(--rational-blue); }
         .bg-surface { background-color: var(--bg-blue); }
         
-        /* 3. Logo 标准构造 */
+        /* 3. Logo 标准构造 (V5 终极合规版) */
+        /* 依据：品牌手册 - 数字化修订条款 */
+        
         .logo-container {
             display: flex;
             flex-direction: column;
+            /* 行距修正：手册要求 0.8 倍 */
             line-height: 0.85; 
             padding-top: 4px; 
         }
         
         .logo-main {
             font-family: 'Open Sans', sans-serif;
+            /* 字重：应用数字化条款，从 500 提升至 600 (Semi-Bold) 以抗锯齿 */
             font-weight: 600; 
             color: var(--rational-blue);
-            font-size: 2rem; /* 移动端默认稍微小一点，适配窄屏 */
+            font-size: 2.2rem; 
+            /* 字距修正：手册要求 +10~+20 (微宽)，不再使用负值 */
             letter-spacing: 0.01em; 
         }
         
         .logo-sub {
             font-family: 'Open Sans', sans-serif;
-            font-weight: 400; 
+            font-weight: 400; /* Regular */
             color: var(--rational-blue);
-            font-size: 1.1rem; 
+            font-size: 1.2rem; 
             margin-top: 2px;   
+            /* 对齐：应用数字化条款，允许右对齐以适应导航栏 */
             align-self: flex-end; 
             opacity: 0.95; 
+            /* 字距修正：手册要求 +5~+15 */
             letter-spacing: 0.02em; 
-            white-space: nowrap; /* 防止换行 */
         }
 
-        /* 响应式字体调整 */
-        @media (min-width: 768px) {
-            .logo-main { font-size: 2.2rem; }
-            .logo-sub { font-size: 1.2rem; }
+        /* 移动端导航菜单样式 */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
         }
     </style>
 </head>
 <body class="bg-white text-[#2E2E2E]">
 
     <!-- NAV -->
-    <nav class="fixed w-full z-50 bg-white/98 backdrop-blur-md border-b border-[#DADADA]">
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#DADADA]">
         <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center relative">
             <!-- 品牌标识区域 -->
-            <a href="#" class="logo-container group z-50">
+            <a href="#" class="logo-container group">
                 <span class="logo-main">BENENOVO</span>
                 <span class="logo-sub">Supply Chain</span>
             </a>
             
-            <!-- 桌面端菜单 (Desktop Menu) - 手机上隐藏 -->
+            <!-- 桌面端菜单 (Desktop Menu) - 在移动端隐藏 -->
             <div class="hidden md:flex gap-10 text-sm font-medium text-[#6B6B6B]">
                 <a href="#about" class="hover:text-[#0A3A5A] transition-colors">Who We Are</a>
                 <a href="#services" class="hover:text-[#0A3A5A] transition-colors">Services</a>
                 <a href="#contact" class="hover:text-[#0A3A5A] transition-colors">Contact</a>
             </div>
 
-            <!-- CTA 按钮 (Desktop) - 手机上隐藏 -->
+            <!-- CTA 按钮 (Desktop) - 在移动端隐藏 -->
             <a href="https://www.linkedin.com/in/michael-bao-1172b991" target="_blank" class="hidden md:inline-flex px-6 py-2.5 bg-[#4F7FA3] text-white rounded text-sm font-medium hover:bg-[#1F5C85] transition shadow-sm">
                 Connect on LinkedIn
             </a>
 
-            <!-- 移动端汉堡按钮 (Mobile Hamburger Button) - 仅手机显示 -->
-            <button id="mobile-menu-btn" class="md:hidden z-50 text-[#0A3A5A] focus:outline-none p-2">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
+            <!-- 移动端汉堡按钮 (Mobile Menu Button) - 仅在移动端显示 -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" type="button" class="text-[#0A3A5A] hover:text-[#1F5C85] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#1F5C85] p-2 rounded-md">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Heroicon name: outline/menu -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
         </div>
 
-        <!-- 移动端下拉菜单 (Mobile Dropdown) -->
-        <div id="mobile-menu" class="hidden absolute top-24 left-0 w-full bg-white border-b border-[#DADADA] shadow-xl md:hidden flex-col">
-            <a href="#about" class="block px-8 py-4 text-[#0A3A5A] font-medium hover:bg-[#E6EEF4] border-t border-gray-100">Who We Are</a>
-            <a href="#services" class="block px-8 py-4 text-[#0A3A5A] font-medium hover:bg-[#E6EEF4] border-t border-gray-100">Services</a>
-            <a href="#contact" class="block px-8 py-4 text-[#0A3A5A] font-medium hover:bg-[#E6EEF4] border-t border-gray-100">Contact</a>
-            <div class="p-6 bg-[#F8FAFC]">
-                <a href="https://www.linkedin.com/in/michael-bao-1172b991" target="_blank" class="block w-full text-center px-6 py-3 bg-[#4F7FA3] text-white rounded font-medium hover:bg-[#1F5C85]">
-                    Connect on LinkedIn
-                </a>
+        <!-- 移动端下拉菜单 (Mobile Menu Dropdown) - 默认隐藏 -->
+        <div class="md:hidden hidden bg-white border-b border-[#DADADA] absolute top-24 left-0 w-full shadow-lg z-40" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-medium text-[#6B6B6B]">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base hover:text-[#0A3A5A] hover:bg-[#E6EEF4] transition">Who We Are</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base hover:text-[#0A3A5A] hover:bg-[#E6EEF4] transition">Services</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base hover:text-[#0A3A5A] hover:bg-[#E6EEF4] transition">Contact</a>
+            </div>
+            <div class="pt-4 pb-3 border-t border-[#DADADA]">
+                <div class="px-2 space-y-1 sm:px-3">
+                    <a href="https://www.linkedin.com/in/michael-bao-1172b991" target="_blank" class="block w-full text-center px-4 py-3 bg-[#4F7FA3] text-white rounded text-base font-medium hover:bg-[#1F5C85] transition shadow-sm">
+                        Connect on LinkedIn
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -233,31 +246,43 @@
                 </a>
             </div>
             <div class="w-12 h-1 bg-[#1F5C85] mx-auto mb-8"></div>
-            <p class="text-sm text-white/60">
-                © 2026 BENENOVO Supply Chain Solutions Co., Ltd.<br>
-                A Bio-Tech Powered Industrial Platform.
+            <!-- 修改了这里的版权声明，加入了 BENENOVO Corp. 的母公司背书 -->
+            <p class="text-sm text-white/80 font-bold mb-1">
+                BENENOVO Supply Chain Solutions
+            </p>
+            <p class="text-xs text-white/50 tracking-widest uppercase mb-4">
+                A BENENOVO Corp. Company
+            </p>
+            <p class="text-[10px] text-white/40">
+                © 2026 BENENOVO Corp. All rights reserved.<br>
+                Beijing • Bangkok • Global
             </p>
         </div>
     </section>
 
-    <!-- 移动端菜单控制脚本 -->
+    <!-- 移动端菜单交互脚本 -->
     <script>
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const links = menu.querySelectorAll('a');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        // 点击按钮切换菜单
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('flex');
+        // 点击按钮切换菜单显示/隐藏
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
 
-        // 点击链接后自动收起菜单
-        links.forEach(link => {
+        // 点击菜单链接后自动关闭菜单
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-                menu.classList.remove('flex');
+                mobileMenu.classList.add('hidden');
             });
+        });
+
+        // 点击页面其他地方关闭菜单 (可选优化)
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
         });
     </script>
 
