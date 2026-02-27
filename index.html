@@ -3,137 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BENENOVO Supply Chain Solutions | Bio-Tech Powered</title>
-    <meta name="description" content="Precision Sourcing and China OEM of food. Bio-Tech Powered.">
+    <title>BENENOVO Supply Chain Solutions | Precision Sourcing & OEM Architect</title>
+    <meta name="description" content="17 years of expertise in China OEM and precision sourcing. Bio-tech powered supply chain solutions.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Open Sans', sans-serif; scroll-behavior: smooth; }
-        
+        body { font-family: 'Open Sans', sans-serif; scroll-behavior: smooth; color: #2E2E2E; }
         :root {
-            --rational-blue: #0A3A5A;   /* 品牌主色 */
-            --level1-blue: #1F5C85;     /* 辅助蓝 L1 */
-            --level2-blue: #4F7FA3;     /* 辅助蓝 L2 */
-            --bg-blue: #E6EEF4;         /* 背景蓝 */
+            --rational-blue: #0A3A5A;
+            --accent-blue: #1F5C85;
+            --soft-blue: #F1F6F9;
+            --border-color: #E2E8F0;
         }
-
         .text-rational { color: var(--rational-blue); }
         .bg-rational { background-color: var(--rational-blue); }
-        .bg-surface { background-color: var(--bg-blue); }
         
-        /* Logo 核心架构 (V7 优化版) */
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            line-height: 0.85; 
-            padding-top: 4px; 
-        }
-        .logo-main {
-            font-weight: 600; 
-            color: var(--rational-blue);
-            font-size: 1.8rem; 
-            letter-spacing: 0.01em; 
-        }
-        @media (min-width: 768px) { .logo-main { font-size: 2.2rem; } }
-        
-        .logo-sub {
-            font-weight: 400; 
-            color: var(--rational-blue);
-            font-size: 1rem; 
-            margin-top: 2px;   
-            align-self: flex-end; /* 右偏移对齐 */
-            opacity: 0.95; 
-        }
-        @media (min-width: 768px) { .logo-sub { font-size: 1.2rem; } }
+        /* LOGO 严格合规架构 */
+        .logo-container { display: flex; flex-direction: column; line-height: 0.85; padding-top: 2px; }
+        .logo-main { font-weight: 600; color: var(--rational-blue); font-size: 1.8rem; letter-spacing: 0.01em; }
+        @media (min-width: 768px) { .logo-main { font-size: 2.1rem; } }
+        .logo-sub { font-weight: 400; color: var(--rational-blue); font-size: 1rem; align-self: flex-end; opacity: 0.9; letter-spacing: 0.01em; }
+        @media (min-width: 768px) { .logo-sub { font-size: 1.15rem; } }
 
-        /* 移动端菜单隐藏 */
-        #mobile-menu { max-height: 0; opacity: 0; transition: all 0.3s ease-in-out; overflow: hidden; }
-        #mobile-menu.open { max-height: 350px; opacity: 1; }
+        .section-padding { padding: 90px 24px; }
+        
+        /* 强化后的 Solutions 卡片 */
+        .solution-card { 
+            background: white; 
+            border: 1px solid var(--border-color); 
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+        }
+        .solution-card:hover { 
+            border-color: var(--rational-blue); 
+            transform: translateY(-4px); 
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05); 
+        }
+
+        #mobile-menu { max-height: 0; opacity: 0; transition: all 0.4s ease; overflow: hidden; }
+        #mobile-menu.open { max-height: 400px; opacity: 1; }
+
+        .portrait-frame::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 1rem;
+            pointer-events: none;
+        }
     </style>
 </head>
-<body class="bg-white text-[#2E2E2E]">
+<body class="bg-white">
 
-    <!-- NAV -->
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#DADADA]">
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 h-20 md:h-24 flex justify-between items-center">
-            <!-- 视觉 Logo：保持简洁 -->
-            <a href="#" class="logo-container">
+            <a href="#" class="logo-container group">
                 <span class="logo-main">BENENOVO</span>
                 <span class="logo-sub">Supply Chain</span>
             </a>
-            
-            <div class="hidden md:flex gap-10 text-sm font-medium text-[#6B6B6B] items-center">
+            <div class="hidden md:flex gap-10 text-sm font-semibold tracking-wide text-slate-600 items-center">
                 <a href="#about" class="hover:text-rational transition">Who We Are</a>
-                <a href="#services" class="hover:text-rational transition">Services</a>
+                <a href="#problem" class="hover:text-rational transition">The Gap</a>
+                <a href="#services" class="hover:text-rational transition">Solutions</a>
                 <a href="#contact" class="hover:text-rational transition">Contact</a>
-                <a href="https://www.linkedin.com/in/michael-bao-1172b991" target="_blank" class="px-6 py-2 bg-[#4F7FA3] text-white rounded text-sm font-medium hover:bg-[#1F5C85] transition">Connect on LinkedIn</a>
+                <a href="https://www.linkedin.com/in/michael-bao-1172b991" target="_blank" class="px-5 py-2.5 bg-rational text-white rounded shadow-lg hover:shadow-blue-900/20 transition">LinkedIn Profile</a>
             </div>
-
-            <button id="hamburger-btn" class="md:hidden p-2 text-rational"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+            <button id="hamburger" class="md:hidden text-rational p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="nav-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
         </div>
-        <div id="mobile-menu" class="md:hidden bg-white border-b border-[#DADADA] absolute w-full left-0 shadow-xl">
-            <div class="flex flex-col px-6 py-4 space-y-4 text-center text-sm font-medium">
-                <a href="#about" class="mobile-link py-2 border-b border-slate-100">Who We Are</a>
-                <a href="#services" class="mobile-link py-2 border-b border-slate-100">Services</a>
-                <a href="#contact" class="mobile-link py-2 border-b border-slate-100">Contact</a>
-                <a href="https://www.linkedin.com/in/michael-bao-1172b991" target="_blank" class="py-3 bg-rational text-white rounded-lg font-bold">LinkedIn Profile</a>
+        <div id="mobile-menu" class="md:hidden bg-white px-6 shadow-xl absolute w-full border-b border-slate-100">
+            <div class="flex flex-col py-6 space-y-5 text-center font-bold">
+                <a href="#about" class="m-link py-2 border-b border-slate-50">Who We Are</a>
+                <a href="#problem" class="m-link py-2 border-b border-slate-50">The Gap</a>
+                <a href="#services" class="m-link py-2 border-b border-slate-50">Solutions</a>
+                <a href="#contact" class="m-link py-2">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- HERO (省略部分内容以保持逻辑重点) -->
-    <header class="pt-40 pb-24 px-6 bg-surface">
-        <div class="max-w-5xl mx-auto text-center md:text-left">
-            <div class="inline-block px-4 py-1 border border-level1-blue text-level1-blue text-xs font-bold tracking-widest mb-8 uppercase">Bio-Tech Powered</div>
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-rational leading-[1.1]">Precision Sourcing.<br>China OEM Solutions.</h1>
-            <p class="text-xl text-[#6B6B6B] max-w-2xl font-normal leading-relaxed">Solving the "Matching Problem" for global brands with 17 years of on-the-ground expertise.</p>
+    <!-- HERO SECTION -->
+    <header class="relative pt-44 pb-28 px-6 overflow-hidden bg-slate-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl">
+                <p class="text-accent-blue font-bold tracking-[0.2em] text-xs uppercase mb-6 flex items-center gap-2">
+                    <span class="w-10 h-px bg-accent-blue"></span> Bio-Tech Powered Supply Chain
+                </p>
+                <h1 class="text-5xl md:text-7xl font-bold leading-[1.1] text-rational mb-8 tracking-tight">
+                    Architecting Global Sourcing.<br>Ensuring <span class="text-blue-500 font-medium">Reliability</span>.
+                </h1>
+                <p class="text-lg md:text-xl text-slate-500 leading-relaxed mb-10 max-w-xl">
+                    For 17 years, we have specialized in aligning global standards with China’s manufacturing reality through precise technical auditing.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#services" class="bg-rational text-white px-8 py-4 rounded-lg font-bold hover:bg-slate-800 transition shadow-xl shadow-blue-900/10">Our Solutions</a>
+                    <a href="#contact" class="bg-white border border-slate-200 px-8 py-4 rounded-lg font-bold hover:bg-slate-50 transition">Get a Technical Audit</a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- CONTENT SECTIONS (此处省略具体业务描述) -->
-
-    <!-- FOOTER: 名字层级的完美落地 -->
-    <footer class="py-20 px-6 bg-rational text-white text-center">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold mb-10 italic">"Architecting resilient and transparent global supply chains."</h2>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-                <a href="mailto:service@supply.benenovo.com" class="px-8 py-3 bg-white text-rational rounded font-bold hover:bg-[#E6EEF4] transition">Email: service@supply.benenovo.com</a>
-                <a href="#about" class="px-8 py-3 border border-white/30 text-white rounded font-bold hover:bg-white/10 transition">Our Strategy</a>
+    <!-- SECTION: THE PROBLEM -->
+    <section id="problem" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-rational mb-8 leading-snug">The Alignment Challenge in China Sourcing</h2>
+                <div class="space-y-6 text-slate-600 leading-relaxed text-lg">
+                    <p>The core challenge for global brands is not finding a supplier, but ensuring that a factory’s <em>operational DNA</em> matches your specific quality standards.</p>
+                    <p class="font-semibold text-rational border-l-4 border-blue-500 pl-4">Nuances in communication and discrepancies in quality control often lead to significant supply chain friction.</p>
+                    <p>BENENOVO acts as your technical architect on the ground, ensuring that your vision is translated perfectly into daily manufacturing reality.</p>
+                </div>
             </div>
-
-            <!-- 这里是您问题的核心解决方案 -->
-            <div class="space-y-4">
-                <div class="w-12 h-1 bg-level2-blue mx-auto"></div>
-                
-                <!-- 1. 业务全称 -->
-                <p class="text-lg font-bold tracking-wide">
-                    BENENOVO Supply Chain Solutions
-                </p>
-                
-                <!-- 2. 集团权威背书 -->
-                <p class="text-[10px] md:text-xs text-blue-300 font-bold tracking-[0.3em] uppercase">
-                    A BENENOVO Corp. Company
-                </p>
-                
-                <!-- 3. 版权声明使用母公司名字 -->
-                <p class="text-[10px] text-white/30 mt-6 leading-relaxed">
-                    © 2026 BENENOVO Corp. All rights reserved.<br>
-                    Beijing • Bangkok • Global
-                </p>
+            <div class="grid grid-cols-2 gap-6 text-center">
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">17+</div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Years Experience</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">500+</div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Audit Projects</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                    <div class="text-4xl font-bold text-emerald-500 mb-2">High</div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Consistency</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                    <div class="text-4xl font-bold text-emerald-500 mb-2">24h</div>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Response Time</p>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- SECTION: SOLUTIONS (修复显示不清晰问题) -->
+    <section id="services" class="section-padding bg-slate-50">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-rational mb-16">Strategic Solutions</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Sourcing -->
+                <div class="solution-card p-10 rounded-2xl text-left">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-8">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-rational mb-4">Precision Sourcing</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Identifying manufacturers beyond public directories. We focus on technical alignment and long-term scalability for your brand.</p>
+                </div>
+                <!-- OEM -->
+                <div class="solution-card p-10 rounded-2xl text-left border-rational border-2">
+                    <div class="w-14 h-14 bg-slate-100 text-rational rounded-xl flex items-center justify-center mb-8">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-rational mb-4">China OEM Architect</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Full-cycle project oversight. We oversee the translation of your R&D science into factory-floor operating procedures (SOPs).</p>
+                </div>
+                <!-- Compliance -->
+                <div class="solution-card p-10 rounded-2xl text-left">
+                    <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center mb-8">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-rational mb-4">Risk & Compliance</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Deep-dive facility audits focusing on operational consistency, social responsibility, and international regulatory readiness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: WHO WE ARE (文案优化：低调稳重) -->
+    <section id="about" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-24 items-center">
+            <div class="w-full md:w-2/5">
+                <div class="relative group">
+                    <div class="absolute -inset-4 bg-slate-100 rounded-3xl -rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
+                    <div class="portrait-frame relative bg-slate-200 aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="michael_portrait.png" 
+                             alt="Michael Bao - Supply Chain Architect" 
+                             class="w-full h-full object-cover grayscale-[0.05] hover:grayscale-0 transition-all duration-700"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden absolute inset-0 flex items-center justify-center text-slate-400 italic text-xs text-center px-10">
+                            [Image: michael_portrait.png]
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-3/5">
+                <h2 class="text-3xl md:text-4xl font-bold text-rational mb-8">Meet Your Architect: Michael Bao</h2>
+                <div class="space-y-6 text-slate-600 leading-relaxed text-lg font-light">
+                    <p>With a <span class="font-bold text-rational">17-year career</span> spanning international trade and supply chain management, I have gained deep insights into the complexities of manufacturing in China.</p>
+                    <p>My mission is to ensure <strong class="font-semibold text-slate-800">operational transparency and consistency</strong>. I act as your strategic partner on the ground to translate global quality standards into reliable manufacturing reality.</p>
+                    <div class="pt-6">
+                        <p class="font-bold text-rational text-xl">— Michael Bao</p>
+                        <p class="text-sm uppercase tracking-widest text-slate-400 font-bold">Founder & Chief Supply Chain Architect</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: CONTACT -->
+    <section id="contact" class="section-padding bg-slate-50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-rational mb-6">Secure Your Supply Chain Today</h2>
+            <p class="text-slate-500 mb-14 text-lg">Achieve total transparency. Get a preliminary sourcing audit for your project.</p>
+            <div class="bg-white p-10 md:p-16 rounded-[2.5rem] shadow-2xl border border-slate-100 relative overflow-hidden group">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.3em] mb-6">Executive Direct Line</p>
+                <a href="mailto:service@supply.benenovo.com" class="text-blue-600 text-3xl md:text-4xl font-black hover:text-rational transition break-all leading-tight italic">service@supply.benenovo.com</a>
+                <p class="mt-10 text-sm text-slate-400 font-medium">Responses within 24 hours guaranteed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-24 px-6 bg-rational text-white text-center">
+        <div class="max-w-5xl mx-auto">
+            <p class="text-xl font-bold tracking-wide">BENENOVO Supply Chain Solutions</p>
+            <p class="text-[10px] md:text-xs text-blue-300 font-bold tracking-[0.3em] uppercase mt-2">A BENENOVO Corp. Company</p>
+            <p class="text-[10px] text-white/20 mt-8 uppercase tracking-widest">© 2026 BENENOVO Corp. | Beijing • London • Bangkok</p>
         </div>
     </footer>
 
     <script>
-        const btn = document.getElementById('hamburger-btn');
+        const hb = document.getElementById('hamburger');
         const menu = document.getElementById('mobile-menu');
-        const icon = document.getElementById('hamburger-icon');
-        btn.addEventListener('click', () => {
+        const icon = document.getElementById('nav-icon');
+        hb.addEventListener('click', () => {
             menu.classList.toggle('open');
             icon.setAttribute('d', menu.classList.contains('open') ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16');
         });
-        document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => { menu.classList.remove('open'); icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); }));
+        document.querySelectorAll('.m-link').forEach(link => {
+            link.addEventListener('click', () => { menu.classList.remove('open'); icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); });
+        });
     </script>
 </body>
 </html>
