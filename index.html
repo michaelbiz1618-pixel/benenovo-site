@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8M27KBJVPF"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -11,74 +10,23 @@
       gtag('js', new Date());
       gtag('config', 'G-8M27KBJVPF');
     </script>
-
     <title>BENENOVO Supply Chain | F&B & Nutrition OEM Architect</title>
     <meta name="description" content="Bridging the Execution Gap in China manufacturing. Precision sourcing and OEM management for global food, beverage, and nutritional brands.">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: 'Open Sans', sans-serif; }
-        
-        :root {
-            --rational-blue: #0A3A5A;   
-            --level1-blue: #1F5C85;     
-            --level2-blue: #4F7FA3;     
-            --bg-blue: #E6EEF4;         
-        }
-
-        .text-rational { color: var(--rational-blue); }
-        .bg-rational { background-color: var(--rational-blue); }
-        .bg-surface { background-color: var(--bg-blue); }
-        
-        /* Logo 标准构造 */
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            line-height: 0.85; 
-            padding-top: 4px; 
-            position: relative;
-            z-index: 60;
-        }
-        .logo-main {
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 600; 
-            color: var(--rational-blue);
-            font-size: 1.8rem; 
-            letter-spacing: 0.01em; 
-        }
+        :root { --rational-blue: #0A3A5A; --level1-blue: #1F5C85; --level2-blue: #4F7FA3; --bg-blue: #E6EEF4; }
+        .text-rational { color: var(--rational-blue); } .bg-rational { background-color: var(--rational-blue); } .bg-surface { background-color: var(--bg-blue); }
+        .logo-container { display: flex; flex-direction: column; line-height: 0.85; padding-top: 4px; position: relative; z-index: 60; }
+        .logo-main { font-family: 'Open Sans', sans-serif; font-weight: 600; color: var(--rational-blue); font-size: 1.8rem; letter-spacing: 0.01em; }
         @media (min-width: 768px) { .logo-main { font-size: 2.2rem; } }
-        
-        .logo-sub {
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 400; 
-            color: var(--rational-blue);
-            font-size: 1rem; 
-            margin-top: 2px;   
-            align-self: flex-end; 
-            opacity: 0.95; 
-            letter-spacing: 0.02em; 
-        }
+        .logo-sub { font-family: 'Open Sans', sans-serif; font-weight: 400; color: var(--rational-blue); font-size: 1rem; margin-top: 2px; align-self: flex-end; opacity: 0.95; letter-spacing: 0.02em; }
         @media (min-width: 768px) { .logo-sub { font-size: 1.2rem; } }
-
-        /* 移动端菜单动画 */
-        #mobile-menu {
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-        }
-        #mobile-menu.open {
-            max-height: 300px;
-            opacity: 1;
-        }
-
-        /* 强调词高亮样式 */
-        .highlight-pillar {
-            color: var(--level1-blue);
-            font-weight: 700;
-        }
+        #mobile-menu { transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; max-height: 0; opacity: 0; overflow: hidden; }
+        #mobile-menu.open { max-height: 300px; opacity: 1; }
+        .highlight-pillar { color: var(--level1-blue); font-weight: 700; }
     </style>
 </head>
 <body class="bg-white text-[#2E2E2E] antialiased">
@@ -86,12 +34,10 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#DADADA]">
         <div class="max-w-7xl mx-auto px-6 h-20 md:h-24 flex justify-between items-center">
-            
             <a href="#" class="logo-container group">
                 <span class="logo-main">BENENOVO</span>
                 <span class="logo-sub">Supply Chain</span>
             </a>
-            
             <div class="hidden md:flex gap-10 text-sm font-medium text-[#6B6B6B] items-center">
                 <a href="report.html" class="text-[#1F5C85] font-bold hover:text-[#0A3A5A] transition-colors"><i class="fa-solid fa-file-pdf mr-1"></i> Free Report</a>
                 <a href="#architect" class="hover:text-[#0A3A5A] transition-colors">The Architect</a>
@@ -100,22 +46,16 @@
                     Connect on LinkedIn
                 </a>
             </div>
-
             <button id="hamburger-btn" class="md:hidden p-2 text-rational focus:outline-none relative z-60">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
-
         <div id="mobile-menu" class="md:hidden bg-white border-b border-[#DADADA] absolute w-full left-0 top-[80px] shadow-xl">
             <div class="flex flex-col px-6 py-4 space-y-4 text-center">
                 <a href="report.html" class="mobile-link text-base font-bold text-[#1F5C85] hover:text-rational py-2 border-b border-slate-100">Free Industry Report</a>
                 <a href="#architect" class="mobile-link text-base font-medium text-[#2E2E2E] hover:text-rational py-2 border-b border-slate-100">The Architect</a>
                 <a href="#services" class="mobile-link text-base font-medium text-[#2E2E2E] hover:text-rational py-2 border-b border-slate-100">Services</a>
-                <a href="https://www.linkedin.com/in/michael-bao-benenovo" target="_blank" class="mobile-link mt-2 px-6 py-3 bg-rational text-white rounded-lg text-base font-bold shadow-md">
-                    Connect on LinkedIn
-                </a>
+                <a href="https://www.linkedin.com/in/michael-bao-benenovo" target="_blank" class="mobile-link mt-2 px-6 py-3 bg-rational text-white rounded-lg text-base font-bold shadow-md">Connect on LinkedIn</a>
             </div>
         </div>
     </nav>
@@ -123,65 +63,44 @@
     <!-- Hero Section -->
     <header class="pt-32 md:pt-40 pb-20 md:pb-24 px-6 bg-surface relative overflow-hidden">
         <div class="max-w-6xl mx-auto mt-4 md:mt-0 flex flex-col md:flex-row items-center gap-12">
-            
             <div class="w-full md:w-1/2 text-center md:text-left z-10">
                 <div class="inline-block px-4 py-1.5 border border-[#1F5C85] text-[#1F5C85] text-xs font-bold tracking-[0.15em] mb-6 md:mb-8 uppercase bg-white/50 backdrop-blur-sm">
                     Virtual Supply Chain VP
                 </div>
-                
                 <h1 class="text-4xl sm:text-5xl md:text-[3.5rem] font-bold tracking-tight mb-6 md:mb-8 leading-[1.15] text-rational">
-                    Bridging the <br>
-                    <span class="text-[#1F5C85]">Execution Gap.</span>
+                    Bridging the <br><span class="text-[#1F5C85]">Execution Gap.</span>
                 </h1>
-                
                 <p class="text-lg text-[#475569] font-normal leading-relaxed mb-8">
                     We translate your brilliant R&D into flawless China manufacturing reality through <span class="highlight-pillar">Precision Sourcing</span>, <span class="highlight-pillar">OEM Management</span>, and a <span class="highlight-pillar">Bio-Tech Powered</span> approach for the global food, beverage, and nutrition sectors.
                 </p>
-                
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="mailto:service@supply.benenovo.com" class="px-8 py-4 bg-rational text-white rounded font-semibold hover:bg-[#06263b] transition shadow-lg text-center">
+                    <a href="#contact" class="px-8 py-4 bg-rational text-white rounded font-semibold hover:bg-[#06263b] transition shadow-lg text-center">
                         Book a Consultation
                     </a>
                 </div>
             </div>
-
             <div class="w-full md:w-1/2 z-10">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-[#DADADA] bg-black aspect-video group">
-                    <iframe 
-                        class="absolute top-0 left-0 w-full h-full"
-                        src="https://www.youtube.com/embed/qD_n53YfQGc?rel=0&modestbranding=1" 
-                        title="BENENOVO Supply Chain Architecture" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/qD_n53YfQGc?rel=0&modestbranding=1" title="BENENOVO Supply Chain Architecture" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
-                <p class="text-xs text-center text-[#6B6B6B] mt-4 font-semibold uppercase tracking-widest animate-pulse">
-                    ▶ Now Playing: The Execution Gap
-                </p>
+                <p class="text-xs text-center text-[#6B6B6B] mt-4 font-semibold uppercase tracking-widest animate-pulse">▶ Now Playing: The Execution Gap</p>
             </div>
-
         </div>
         <div class="absolute top-0 right-0 w-1/2 md:w-1/3 h-full bg-[#dae6f0] -z-10 skew-x-12 opacity-50"></div>
     </header>
 
-    <!-- 【核心更新区】植入高管诱饵 (Lead Magnet Banner) -->
+    <!-- Lead Magnet Banner -->
     <section class="bg-gradient-to-r from-[#0A3A5A] to-[#1F5C85] py-12 px-6 relative overflow-hidden shadow-inner border-y border-[#06263b]">
-        <!-- 工业背景底纹 -->
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
-        
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
             <div class="text-left flex-1 text-center md:text-left">
                 <span class="inline-block px-3 py-1 bg-white/20 text-blue-100 text-[10px] font-bold tracking-widest uppercase rounded mb-3 border border-white/20">
                     <i class="fa-solid fa-download mr-1"></i> Free Industry Report
                 </span>
                 <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">The Execution Gap: 7 Hidden Risks in Scaling Overseas</h2>
-                <!-- 【已修复】修改为了 thousands of miles away -->
                 <p class="text-blue-100 text-sm md:text-base max-w-xl mx-auto md:mx-0">Stop managing chaos from thousands of miles away. Download the Supply Chain Architect's playbook on scaling functional brands safely in Asia.</p>
             </div>
-            
             <div class="shrink-0 w-full md:w-auto text-center md:text-right">
-                <!-- 【跳转链接】指向 report.html -->
                 <a href="report.html" class="inline-flex items-center justify-center w-full md:w-auto px-8 py-4 bg-white text-[#0A3A5A] rounded font-black shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:scale-105 transition-all uppercase tracking-wide text-sm">
                     Read the Full Report <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
@@ -192,53 +111,35 @@
     <!-- The Architect Section -->
     <section id="architect" class="py-20 md:py-24 px-6 border-b border-[#DADADA] bg-white">
         <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-            
             <div class="md:col-span-5 relative w-full max-w-sm mx-auto md:mx-0">
                 <div class="absolute inset-0 bg-[#f1f5f9] rounded-2xl transform translate-x-4 translate-y-4"></div>
                 <img src="michael_portrait.png" alt="Michael Bao" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" class="relative z-10 rounded-2xl shadow-lg w-full object-cover border border-slate-200">
             </div>
-
             <div class="md:col-span-7 md:pl-8">
                 <h2 class="text-3xl font-bold mb-6 text-rational">17 Years on the Factory Floor</h2>
                 <div class="space-y-5 text-[#475569] leading-relaxed text-base">
-                    <p>
-                        With a <strong class="text-rational font-bold">17-year career</strong> on the front lines of China's food and life science manufacturing, my mission is to solve a critical structural risk in cross-border scaling: The <strong>"Execution Gap"</strong> between global standards and factory-floor reality.
-                    </p>
-                    <p>
-                        I act as your independent Supply Chain Architect. We bridge this gap through three core pillars:
-                    </p>
-                    
+                    <p>With a <strong class="text-rational font-bold">17-year career</strong> on the front lines of China's food and life science manufacturing, my mission is to solve a critical structural risk in cross-border scaling: The <strong>"Execution Gap"</strong> between global standards and factory-floor reality.</p>
+                    <p>I act as your independent Supply Chain Architect. We bridge this gap through three core pillars:</p>
                     <ul class="space-y-4 mt-4 bg-slate-50 p-6 rounded-xl border border-slate-100">
                         <li class="flex items-start gap-3">
                             <span class="text-[#1F5C85] mt-1"><i class="fa-solid fa-magnifying-glass-location"></i></span>
-                            <div>
-                                <strong class="text-rational">Precision Sourcing:</strong> 
-                                <span class="text-sm block mt-0.5">Vetting top-tier facilities and securing high-purity functional ingredients.</span>
-                            </div>
+                            <div><strong class="text-rational">Precision Sourcing:</strong> <span class="text-sm block mt-0.5">Vetting top-tier facilities and securing high-purity functional ingredients.</span></div>
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="text-[#1F5C85] mt-1"><i class="fa-solid fa-industry"></i></span>
-                            <div>
-                                <strong class="text-rational">China OEM Management:</strong> 
-                                <span class="text-sm block mt-0.5">Providing end-to-end on-site oversight to ensure batch-to-batch consistency.</span>
-                            </div>
+                            <div><strong class="text-rational">China OEM Management:</strong> <span class="text-sm block mt-0.5">Providing end-to-end on-site oversight to ensure batch-to-batch consistency.</span></div>
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="text-[#1F5C85] mt-1"><i class="fa-solid fa-flask"></i></span>
-                            <div>
-                                <strong class="text-rational">Bio-Tech Powered:</strong> 
-                                <span class="text-sm block mt-0.5">Protecting delicate active formulations from degradation during scale-up.</span>
-                            </div>
+                            <div><strong class="text-rational">Bio-Tech Powered:</strong> <span class="text-sm block mt-0.5">Protecting delicate active formulations from degradation during scale-up.</span></div>
                         </li>
                     </ul>
                 </div>
-                
                 <div class="mt-8 pt-6 border-t border-slate-200">
                     <h3 class="font-bold text-rational text-lg">— Michael Bao</h3>
                     <p class="text-xs font-bold text-[#94a3b8] uppercase tracking-widest mt-1">Founder & Chief Supply Chain Architect</p>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -249,47 +150,24 @@
                 <h2 class="text-3xl font-bold text-rational">Dual-Track Solutions</h2>
                 <p class="text-[#6B6B6B] mt-3 md:mt-4 text-sm md:text-base">Tailored strategies for different business models.</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div class="p-8 border border-[#DADADA] bg-white hover:border-rational transition duration-300 group rounded-xl shadow-sm hover:shadow-md">
                     <div class="text-xs font-bold text-[#1F5C85] uppercase mb-4 tracking-widest">For Food Specialty Distributors</div>
                     <h3 class="text-2xl font-bold mb-4 text-rational group-hover:translate-x-1 transition-transform">Technical Back-end</h3>
-                    
                     <ul class="space-y-4 text-[#2E2E2E]">
-                        <li class="flex items-start gap-3 text-sm">
-                            <span class="text-[#1F5C85] font-bold mt-0.5">01</span> 
-                            <span>Exclusive Bio-Tech ingredients sourcing</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm">
-                            <span class="text-[#1F5C85] font-bold mt-0.5">02</span> 
-                            <span>Technical Compliance & Documentation Localization</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm">
-                            <span class="text-[#1F5C85] font-bold mt-0.5">03</span> 
-                            <span>Margin optimization strategies</span>
-                        </li>
+                        <li class="flex items-start gap-3 text-sm"><span class="text-[#1F5C85] font-bold mt-0.5">01</span> <span>Exclusive Bio-Tech ingredients sourcing</span></li>
+                        <li class="flex items-start gap-3 text-sm"><span class="text-[#1F5C85] font-bold mt-0.5">02</span> <span>Technical Compliance & Documentation Localization</span></li>
+                        <li class="flex items-start gap-3 text-sm"><span class="text-[#1F5C85] font-bold mt-0.5">03</span> <span>Margin optimization strategies</span></li>
                     </ul>
-
                 </div>
                 <div class="p-8 bg-white border border-[#DADADA] hover:border-rational transition duration-300 group rounded-xl shadow-sm hover:shadow-md">
                     <div class="text-xs font-bold text-[#1F5C85] uppercase mb-4 tracking-widest">For Functional & Nutritional Brands</div>
                     <h3 class="text-2xl font-bold mb-4 text-rational group-hover:translate-x-1 transition-transform">Virtual Supply Chain VP</h3>
-                    
                     <ul class="space-y-4 text-[#2E2E2E]">
-                        <li class="flex items-start gap-3 text-sm">
-                            <span class="text-[#1F5C85] font-bold mt-0.5">01</span> 
-                            <span>Full OEM/ODM Management</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm">
-                            <span class="text-[#1F5C85] font-bold mt-0.5">02</span> 
-                            <span>Formulation & R&D Alignment</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm">
-                            <span class="text-[#1F5C85] font-bold mt-0.5">03</span> 
-                            <span>Operational Stability Audits</span>
-                        </li>
+                        <li class="flex items-start gap-3 text-sm"><span class="text-[#1F5C85] font-bold mt-0.5">01</span> <span>Full OEM/ODM Management</span></li>
+                        <li class="flex items-start gap-3 text-sm"><span class="text-[#1F5C85] font-bold mt-0.5">02</span> <span>Formulation & R&D Alignment</span></li>
+                        <li class="flex items-start gap-3 text-sm"><span class="text-[#1F5C85] font-bold mt-0.5">03</span> <span>Operational Stability Audits</span></li>
                     </ul>
-
                 </div>
             </div>
         </div>
@@ -298,11 +176,43 @@
     <!-- Footer -->
     <footer id="contact" class="bg-[#0A3A5A] pt-16 pb-12 px-6 border-t-[6px] border-[#1F5C85]">
         <div class="max-w-4xl mx-auto text-center">
-            <div class="mb-16 flex flex-col md:flex-row justify-center gap-4">
-                <a href="mailto:service@supply.benenovo.com" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#0A3A5A] rounded-xl font-bold hover:bg-[#E6EEF4] transition shadow-lg">
-                    Email: service@supply.benenovo.com
-                </a>
+            
+            <!-- 【核心升级：首页底部的联系表单也同步升级】 -->
+            <div class="mb-16">
+                <div class="max-w-md mx-auto bg-white/10 p-8 rounded-xl border border-white/20 backdrop-blur-sm shadow-xl text-left">
+                    <h3 class="text-xl font-bold text-white mb-2 text-center">Let's Bridge The Gap</h3>
+                    <p class="text-sm text-blue-200 mb-6 text-center">Schedule your 15-minute supply chain baseline check.</p>
+                    
+                    <form action="https://formspree.io/f/xzdjnjog" method="POST" class="flex flex-col gap-4">
+                        <div class="flex gap-3">
+                            <input type="text" name="First_Name" placeholder="First Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 w-1/2">
+                            <input type="text" name="Last_Name" placeholder="Last Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 w-1/2">
+                        </div>
+                        <input type="email" name="Email" placeholder="Your Work Email" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
+                        <input type="text" name="Company" placeholder="Company Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
+                        
+                        <select name="Biggest_Challenge" class="px-4 py-3 rounded text-slate-500 focus:text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full bg-white appearance-none cursor-pointer">
+                            <option value="" disabled selected>What's your core supply chain challenge?</option>
+                            <option value="Formulation Scale-up & Active Degradation">Formulation Scale-up & Active Degradation</option>
+                            <option value="Supplier Consolidation & Comm. Chaos">Supplier Consolidation & Comm. Chaos</option>
+                            <option value="Complex NPD & Bio-Tech Sourcing">Complex NPD & Bio-Tech Sourcing</option>
+                            <option value="Navigating High MOQs at Elite Facilities">Navigating High MOQs at Elite Facilities</option>
+                            <option value="Batch-to-Batch QA & Compliance Drift">Batch-to-Batch QA & Compliance Drift</option>
+                            <option value="Other specific challenge">Other specific challenge</option>
+                            <option value="Just exploring right now">Just exploring right now</option>
+                        </select>
+
+                        <button type="submit" class="bg-white text-[#0A3A5A] font-black text-lg py-3 px-6 rounded shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all w-full mt-2 uppercase tracking-wide">
+                            Book Baseline Check
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="mt-6">
+                    <a href="mailto:service@supply.benenovo.com" class="text-blue-200 hover:text-white text-sm transition">Or email directly: service@supply.benenovo.com</a>
+                </div>
             </div>
+
             <div class="border-t border-white/10 pt-12">
                 <h2 class="text-2xl md:text-3xl font-bold text-white tracking-wide mb-3">BENENOVO Supply Chain Solutions</h2>
                 <p class="text-xs md:text-sm text-blue-200 font-bold tracking-[0.25em] uppercase mb-10">A BENENOVO Corp. Company</p>
