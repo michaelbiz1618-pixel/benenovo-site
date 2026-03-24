@@ -13,12 +13,7 @@
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'], },
                     colors: {
-                        brand: {
-                            900: '#0A3A5A', 
-                            800: '#1F5C85', 
-                            700: '#4F7FA3', 
-                            50: '#F0F5F9',  
-                        }
+                        brand: { 900: '#0A3A5A', 800: '#1F5C85', 700: '#4F7FA3', 50: '#F0F5F9', }
                     }
                 }
             }
@@ -26,15 +21,10 @@
     </script>
     <style>
         body { background-color: #f8fafc; }
-        .hero-pattern {
-            background-color: #0A3A5A;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
+        .hero-pattern { background-color: #0A3A5A; background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px); background-size: 20px 20px; }
         .chart-line-ideal { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: drawLine 2s ease-out forwards; }
         .chart-line-actual { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: drawLine 2s ease-out 0.5s forwards; }
         @keyframes drawLine { to { stroke-dashoffset: 0; } }
-        
         .risk-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .risk-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
     </style>
@@ -85,7 +75,6 @@
                 </p>
             </div>
             
-            <!-- Animated "Execution Gap" Chart -->
             <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 shadow-inner relative">
                 <h4 class="text-center text-sm font-bold text-slate-500 uppercase tracking-wider mb-6">Visualizing The Execution Gap</h4>
                 <div class="relative w-full h-64">
@@ -105,9 +94,8 @@
                         <line x1="0" y1="100" x2="100" y2="100" stroke="#cbd5e1" stroke-width="1" />
                         <line x1="0" y1="0" x2="0" y2="100" stroke="#cbd5e1" stroke-width="1" />
                         
-                        <path class="chart-line-ideal" d="M 0,5 Q 50,5 100,10" fill="none" stroke="#0ea5e9" stroke-width="1.5" stroke-linecap="round" />
-                        <path class="chart-line-actual" d="M 0,5 Q 30,10 50,40 T 100,80" fill="none" stroke="#f43f5e" stroke-width="1.5" stroke-linecap="round" />
-                        
+                        <path class="chart-line-ideal" d="M 0,5 Q 50,5 100,10" fill="none" stroke="#0ea5e9" stroke-width="1" stroke-linecap="round" />
+                        <path class="chart-line-actual" d="M 0,5 Q 30,10 50,40 T 100,80" fill="none" stroke="#f43f5e" stroke-width="1" stroke-linecap="round" />
                         <path d="M 50,10 L 50,40 M 80,8 L 80,68" stroke="#f59e0b" stroke-width="1" stroke-dasharray="1,1" />
                     </svg>
                     <div class="absolute top-2 right-4 flex flex-col gap-1">
@@ -122,7 +110,6 @@
         </div>
     </section>
 
-    <!-- The 7 Risks Section -->
     <section class="py-20 px-6 bg-slate-50">
         <div class="max-w-5xl mx-auto space-y-12">
             
@@ -188,18 +175,13 @@
                 </div>
             </div>
 
-            <!-- 【已彻底修复的工业实景图：支持本地自定义上传】 -->
-            <div class="w-full h-80 rounded-2xl overflow-hidden relative shadow-md">
-                <!-- src 设定为您本地的命名，onerror 设定为安全的高清不锈钢发酵罐网图 -->
+            <!-- 【核心修复：完美适应 3:2 尺寸，不再裁切】 -->
+            <div class="w-full aspect-[3/2] rounded-2xl overflow-hidden relative shadow-md bg-[#051320] border border-slate-200">
+                <!-- 确保您将 canvas 生成的图命名为 industrial_tanks.jpg 上传到了 github -->
                 <img src="industrial_tanks.jpg" 
-                     onerror="this.src='https://images.unsplash.com/photo-1584362917165-526a968579e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'" 
+                     onerror="this.src='https://images.unsplash.com/photo-1596838132731-3301c3fd4317?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'" 
                      alt="Industrial Scale Fermentation Tanks" 
-                     class="w-full h-full object-cover opacity-90 grayscale-[20%]">
-                <div class="absolute inset-0 bg-brand-900/50 flex items-center justify-center">
-                    <span class="bg-black/70 text-white px-5 py-2.5 rounded font-bold tracking-widest uppercase text-sm border border-white/20 backdrop-blur-sm shadow-lg">
-                        <i class="fa-solid fa-industry mr-2"></i> Industrial Scale Reality Check
-                    </span>
-                </div>
+                     class="w-full h-full object-contain"> <!-- object-contain 保证绝对不裁切 -->
             </div>
 
             <!-- Risk 4 -->
@@ -293,15 +275,37 @@
                 We do not broker ingredients. We do not sell factory capacity. We serve exclusively as your Fractional Supply Chain COO—bridging the Execution Gap so your functional formulations scale precisely as designed.
             </p>
             
-            <div class="max-w-md mx-auto bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-sm">
+            <div class="max-w-md mx-auto bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-sm shadow-xl">
                 <h4 class="text-lg font-bold mb-4">Request a Free Baseline Check & PDF Report</h4>
+                
+                <!-- 【核心升级：高管级表单 (姓名拆分 + 痛点侦测下拉框)】 -->
                 <form action="https://formspree.io/f/xzdjnjog" method="POST" class="flex flex-col gap-3">
-                    <input type="email" name="email" placeholder="Your Work Email" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-700 w-full">
-                    <input type="text" name="company" placeholder="Company Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-700 w-full">
-                    <button type="submit" class="bg-white text-brand-900 font-black text-lg py-3 px-6 rounded shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all w-full mt-2">
+                    
+                    <div class="flex gap-3">
+                        <input type="text" name="First_Name" placeholder="First Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-700 w-1/2">
+                        <input type="text" name="Last_Name" placeholder="Last Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-700 w-1/2">
+                    </div>
+                    
+                    <input type="email" name="Email" placeholder="Your Work Email" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-700 w-full">
+                    
+                    <input type="text" name="Company" placeholder="Company Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-700 w-full">
+                    
+                    <!-- 痛点侦测下拉框 (Qualification Hook) -->
+                    <select name="Biggest_Challenge" class="px-4 py-3 rounded text-slate-500 focus:text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-700 w-full bg-white appearance-none cursor-pointer">
+                        <option value="" disabled selected>What's your biggest scale-up challenge? (Optional)</option>
+                        <option value="Thermal Degradation / Actives Loss">Thermal Degradation / Actives Loss</option>
+                        <option value="Solubility / Clumping Issues">Solubility & Clumping Issues</option>
+                        <option value="High MOQs at Elite Facilities">High MOQs at Elite Facilities</option>
+                        <option value="Batch-to-Batch QA Drift">Batch-to-Batch QA Drift</option>
+                        <option value="Other specific challenge">Other specific challenge</option>
+                        <option value="Just exploring right now">Just exploring right now</option>
+                    </select>
+
+                    <button type="submit" class="bg-white text-brand-900 font-black text-lg py-3 px-6 rounded shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all w-full mt-2 uppercase tracking-wide">
                         Get The Report & Connect
                     </button>
                 </form>
+
             </div>
             
             <p class="mt-8 text-xs text-brand-700 tracking-widest uppercase"><a href="index.html" class="underline hover:text-white transition">Return to Home</a> | &copy; 2026 BENENOVO Supply Chain Solutions.</p>
