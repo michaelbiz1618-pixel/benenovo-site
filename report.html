@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Execution Gap: 7 Hidden Risks in Scaling Functional Brands</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- 引入基础字体和官方Logo专属的 Open Sans 字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
@@ -27,18 +28,35 @@
         @keyframes drawLine { to { stroke-dashoffset: 0; } }
         .risk-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .risk-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+
+        /* =========================================
+           官方主页 Logo 样式 100% 移植
+           ========================================= */
+        .logo-container { display: flex; flex-direction: column; line-height: 0.85; padding-top: 4px; position: relative; z-index: 60; }
+        /* 导航栏深色 Logo */
+        .logo-main { font-family: 'Open Sans', sans-serif; font-weight: 600; color: #0A3A5A; font-size: 1.8rem; letter-spacing: 0.01em; }
+        @media (min-width: 768px) { .logo-main { font-size: 2.2rem; } }
+        .logo-sub { font-family: 'Open Sans', sans-serif; font-weight: 400; color: #0A3A5A; font-size: 1rem; margin-top: 2px; align-self: flex-end; opacity: 0.95; letter-spacing: 0.02em; }
+        @media (min-width: 768px) { .logo-sub { font-size: 1.2rem; } }
+        /* 底部反色纯白 Logo */
+        .logo-main-white { font-family: 'Open Sans', sans-serif; font-weight: 600; color: #ffffff; font-size: 2rem; letter-spacing: 0.01em; }
+        @media (min-width: 768px) { .logo-main-white { font-size: 2.5rem; } }
+        .logo-sub-white { font-family: 'Open Sans', sans-serif; font-weight: 400; color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-top: 2px; align-self: flex-end; letter-spacing: 0.02em; }
+        @media (min-width: 768px) { .logo-sub-white { font-size: 1.4rem; } }
     </style>
 </head>
 <body class="text-slate-800 antialiased selection:bg-brand-800 selection:text-white">
 
-    <!-- Top Navigation / Logo -->
+    <!-- Top Navigation / 替换为官方完全一致的 Logo -->
     <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-baseline gap-3 group hover:opacity-80 transition">
-                <span class="text-2xl font-extrabold tracking-widest text-brand-900 uppercase">BENENOVO</span>
-                <span class="text-sm font-semibold tracking-widest text-brand-700 uppercase hidden sm:inline border-l-2 border-slate-300 pl-3">Supply Chain Architecture</span>
+        <div class="max-w-6xl mx-auto px-6 h-20 md:h-24 flex justify-between items-center">
+            
+            <a href="index.html" class="logo-container group hover:opacity-80 transition-opacity">
+                <span class="logo-main">BENENOVO</span>
+                <span class="logo-sub">Supply Chain</span>
             </a>
-            <a href="#cta" class="text-sm font-bold text-white bg-brand-900 hover:bg-brand-800 px-5 py-2 rounded transition-colors">
+            
+            <a href="#cta" class="text-sm font-bold text-white bg-brand-900 hover:bg-brand-800 px-5 py-2.5 rounded transition-colors shadow-sm">
                 Book Baseline Check
             </a>
         </div>
@@ -110,6 +128,7 @@
         </div>
     </section>
 
+    <!-- The 7 Risks Section -->
     <section class="py-20 px-6 bg-slate-50">
         <div class="max-w-5xl mx-auto space-y-12">
             
@@ -175,13 +194,12 @@
                 </div>
             </div>
 
-            <!-- 【核心修复：完美适应 3:2 尺寸，不再裁切】 -->
+            <!-- Industrial Scale Reality Check -->
             <div class="w-full aspect-[3/2] rounded-2xl overflow-hidden relative shadow-md bg-[#051320] border border-slate-200">
-                <!-- 确保您将 canvas 生成的图命名为 industrial_tanks.jpg 上传到了 github -->
                 <img src="industrial_tanks.jpg" 
                      onerror="this.src='https://images.unsplash.com/photo-1596838132731-3301c3fd4317?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'" 
                      alt="Industrial Scale Fermentation Tanks" 
-                     class="w-full h-full object-contain"> <!-- object-contain 保证绝对不裁切 -->
+                     class="w-full h-full object-contain">
             </div>
 
             <!-- Risk 4 -->
@@ -267,30 +285,31 @@
     <footer id="cta" class="bg-brand-900 text-white py-20 px-6 border-t-[8px] border-brand-700 relative overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center mix-blend-overlay"></div>
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <div class="mb-8">
-                <span class="text-3xl font-extrabold tracking-widest text-white/90 uppercase inline-block">BENENOVO</span>
+            
+            <!-- 替换为反色版的官方完全一致 Logo -->
+            <div class="mb-10 flex justify-center">
+                <div class="logo-container">
+                    <span class="logo-main-white">BENENOVO</span>
+                    <span class="logo-sub-white">Supply Chain</span>
+                </div>
             </div>
+            
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Stop managing chaos from thousands of miles away.</h2>
             <p class="text-blue-200 text-lg mb-10 max-w-2xl mx-auto">
                 We do not broker ingredients. We do not sell factory capacity. We serve exclusively as your Fractional Supply Chain COO—bridging the Execution Gap so your functional formulations scale precisely as designed.
             </p>
             
-            <div class="max-w-md mx-auto bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-sm shadow-xl">
-                <h4 class="text-lg font-bold mb-4">Request a Free Baseline Check & PDF Report</h4>
+            <div class="max-w-md mx-auto bg-white/10 p-6 rounded-xl border border-white/20 backdrop-blur-sm shadow-xl text-left">
+                <h4 class="text-lg font-bold mb-4 text-center">Request a Free Baseline Check & PDF Report</h4>
                 
-                <!-- 【核心升级：高管级表单 (姓名拆分 + 痛点侦测下拉框)】 -->
                 <form action="https://formspree.io/f/xzdjnjog" method="POST" class="flex flex-col gap-3">
-                    
                     <div class="flex gap-3">
                         <input type="text" name="First_Name" placeholder="First Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-700 w-1/2">
                         <input type="text" name="Last_Name" placeholder="Last Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-700 w-1/2">
                     </div>
-                    
                     <input type="email" name="Email" placeholder="Your Work Email" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-700 w-full">
-                    
                     <input type="text" name="Company" placeholder="Company Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-700 w-full">
                     
-                    <!-- 痛点侦测下拉框 (Qualification Hook) -->
                     <select name="Biggest_Challenge" class="px-4 py-3 rounded text-slate-500 focus:text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-700 w-full bg-white appearance-none cursor-pointer">
                         <option value="" disabled selected>What's your core supply chain challenge? (Optional)</option>
                         <option value="Formulation Scale-up & Active Degradation">Formulation Scale-up & Active Degradation</option>
@@ -306,7 +325,6 @@
                         Get The Report & Connect
                     </button>
                 </form>
-
             </div>
             
             <p class="mt-8 text-xs text-brand-700 tracking-widest uppercase"><a href="index.html" class="underline hover:text-white transition">Return to Home</a> | &copy; 2026 BENENOVO Supply Chain Solutions.</p>
