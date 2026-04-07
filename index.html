@@ -177,8 +177,6 @@
                     <p class="text-sm text-blue-200 mb-6 text-center">Submit your details for a baseline check.</p>
                     
                     <form action="https://formspree.io/f/xzdjnjog" method="POST" class="flex flex-col gap-4">
-                        <input type="hidden" name="_next" value="https://www.benenovo.com/thank-you.html">
-
                         <div class="flex gap-3">
                             <input type="text" name="First_Name" placeholder="First Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 w-1/2">
                             <input type="text" name="Last_Name" placeholder="Last Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 w-1/2">
@@ -228,6 +226,42 @@
         }
         btn.addEventListener('click', toggleMenu);
         links.forEach(link => { link.addEventListener('click', () => { if (menu.classList.contains('open')) toggleMenu(); }); });
+        
+        // 架构师专属：AJAX 无缝表单提交拦截系统
+        const form = document.querySelector('form[action^="https://formspree.io"]');
+        if(form) {
+            form.addEventListener("submit", async function(event) {
+                event.preventDefault(); // 拦截 Formspree 默认跳转
+                
+                const data = new FormData(event.target);
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                // 按钮转为处理中状态
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Processing...';
+                submitBtn.disabled = true;
+
+                // 后台静默发送
+                fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    if (response.ok) {
+                        // 成功后瞬间直达感谢页
+                        window.location.href = "https://benenovo.com/thank-you.html";
+                    } else {
+                        alert("Oops! There was a problem submitting your request.");
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }
+                }).catch(error => {
+                    alert("Oops! Network error. Please try again.");
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+            });
+        }
     </script>
 </body>
 </html>
