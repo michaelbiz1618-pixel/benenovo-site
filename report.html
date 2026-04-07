@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Execution Gap: 7 Hidden Risks in Scaling Functional Brands</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8M27KBJVPF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8M27KBJVPF');
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -235,8 +242,6 @@
                 
                 <form action="https://formspree.io/f/xzdjnjog" method="POST" class="flex flex-col gap-4">
                     
-                    <input type="hidden" name="_next" value="https://www.benenovo.com/thank-you.html">
-
                     <div>
                         <input type="email" name="Email" placeholder="Your Work Email (Required)" required class="px-4 py-3.5 rounded text-slate-900 focus:outline-none focus:ring-4 focus:ring-blue-500/50 w-full border border-slate-300 font-medium">
                     </div>
@@ -256,5 +261,42 @@
         </div>
     </footer>
 
+    <script>
+        // 架构师专属：AJAX 无缝表单提交拦截系统
+        const form = document.querySelector('form[action^="https://formspree.io"]');
+        if(form) {
+            form.addEventListener("submit", async function(event) {
+                event.preventDefault(); // 拦截默认跳转
+                
+                const data = new FormData(event.target);
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                // 按钮转为处理中状态
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Processing...';
+                submitBtn.disabled = true;
+
+                // 后台静默发送
+                fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    if (response.ok) {
+                        // 成功后瞬间直达感谢页
+                        window.location.href = "https://benenovo.com/thank-you.html";
+                    } else {
+                        alert("Oops! There was a problem submitting your request.");
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }
+                }).catch(error => {
+                    alert("Oops! Network error. Please try again.");
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+            });
+        }
+    </script>
 </body>
 </html>
