@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8M27KBJVPF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8M27KBJVPF');
+    </script>
+    <title>The Node Isolation Strategy | BENENOVO Supply Chain</title>
+    <meta name="description" content="Decoding the $7B Throughput Arbitrage: Protecting Intellectual Property through Strategic Vendor Architecture (SVA) and the physical decoupling of OEM nodes.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        :root { --rational-blue: #0A3A5A; --level1-blue: #1F5C85; --level2-blue: #4F7FA3; --bg-blue: #E6EEF4; }
+        .text-rational { color: var(--rational-blue); } .bg-rational { background-color: var(--rational-blue); } .bg-surface { background-color: var(--bg-blue); }
+        
+        /* 统一Logo基因：加入 !important 强制锁定全局字号与字重，彻底防止层叠样式污染 */
+        .logo-container { display: flex; flex-direction: column; line-height: 0.85; padding-top: 4px; position: relative; z-index: 60; }
+        .logo-main { font-family: 'Open Sans', sans-serif !important; font-weight: 600 !important; color: #0A3A5A !important; font-size: 1.8rem !important; letter-spacing: 0.01em !important; }
+        @media (min-width: 768px) { .logo-main { font-size: 2.2rem !important; } }
+        .logo-sub { font-family: 'Open Sans', sans-serif !important; font-weight: 400 !important; color: #0A3A5A !important; font-size: 1rem !important; margin-top: 2px; align-self: flex-end; opacity: 0.95; letter-spacing: 0.02em !important; }
+        @media (min-width: 768px) { .logo-sub { font-size: 1.2rem !important; } }
+        
+        #mobile-menu { transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; max-height: 0; opacity: 0; overflow: hidden; }
+        #mobile-menu.open { max-height: 300px; opacity: 1; }
+        
+        /* Report specific typography */
+        .report-content h2 { color: var(--rational-blue); font-size: 1.8rem; font-weight: 800; margin-top: 3rem; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+        .report-content h3 { color: var(--level1-blue); font-size: 1.3rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; }
+        .report-content p { color: #2E2E2E; font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; }
+        
+        /* 修复方块 Bug: 只针对 ul 内的 li 应用方块，排除掉底部的 ol 参考文献 */
+        .report-content ul { color: #2E2E2E; font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; list-style-type: none; padding-left: 0; }
+        .report-content ul li { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; }
+        .report-content ul li::before { content: "■"; color: var(--level1-blue); position: absolute; left: 0; font-size: 0.8rem; top: 0.25rem; }
+        .report-content ol li { margin-bottom: 0.75rem; }
+        
+        .quote-block { border-left: 4px solid var(--level1-blue); background-color: var(--bg-blue); padding: 1.5rem 2rem; margin: 2rem 0; border-radius: 0 0.5rem 0.5rem 0; }
+        /* 修复字体粗细：将 font-weight: 600 改为 400 (normal) */
+        .quote-block p { color: var(--rational-blue); font-style: italic; font-weight: 400; margin-bottom: 0; font-size: 1.1rem; }
+        .citation { font-size: 0.75rem; color: var(--level2-blue); font-weight: 700; vertical-align: super; line-height: 0; cursor: pointer; padding: 0 0.1rem; }
+        .citation:hover { text-decoration: underline; }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-[#2E2E2E] antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#DADADA]">
+        <div class="max-w-7xl mx-auto px-6 h-20 md:h-24 flex justify-between items-center">
+            <a href="index.html" class="logo-container group hover:opacity-80 transition-opacity">
+                <span class="logo-main">BENENOVO</span>
+                <span class="logo-sub">Supply Chain</span>
+            </a>
+            <div class="hidden md:flex gap-10 text-sm font-medium text-[#6B6B6B] items-center">
+                <a href="index.html#insights" class="hover:text-[#0A3A5A] transition-colors"><i class="fa-solid fa-arrow-left mr-1"></i> Back to Insights</a>
+                <a href="report-fermentation.html" class="text-[#1F5C85] font-bold hover:text-[#0A3A5A] transition-colors"><i class="fa-solid fa-microscope mr-1"></i> Request Audit</a>
+                <a href="https://www.linkedin.com/in/michael-bao-benenovo" target="_blank" class="px-6 py-2.5 bg-[#4F7FA3] text-white rounded text-sm font-medium hover:bg-[#1F5C85] transition shadow-sm">
+                    Connect on LinkedIn
+                </a>
+            </div>
+            <button id="hamburger-btn" class="md:hidden p-2 text-rational focus:outline-none relative z-60">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden bg-white border-b border-[#DADADA] absolute w-full left-0 top-[80px] shadow-xl">
+            <div class="flex flex-col px-6 py-4 space-y-4 text-center">
+                <a href="index.html#insights" class="mobile-link text-base font-medium text-[#2E2E2E] hover:text-rational py-2 border-b border-slate-100">Back to Insights</a>
+                <a href="report-fermentation.html" class="mobile-link text-base font-bold text-[#1F5C85] hover:text-rational py-2 border-b border-slate-100">Request TPI Audit</a>
+                <a href="https://www.linkedin.com/in/michael-bao-benenovo" target="_blank" class="mobile-link mt-2 px-6 py-3 bg-rational text-white rounded-lg text-base font-bold shadow-md">Connect on LinkedIn</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Report Header -->
+    <header class="pt-32 md:pt-40 pb-16 px-6 bg-[#0A3A5A] relative overflow-hidden border-b border-[#1F5C85]">
+        <div class="absolute inset-0 opacity-30 bg-[url('hero-blueprint.webp')] bg-cover bg-center mix-blend-overlay"></div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            <span class="inline-block px-3 py-1 bg-white/10 text-blue-100 text-[10px] font-bold tracking-widest uppercase rounded mb-6 border border-white/20 shadow-sm backdrop-blur-sm">
+                <i class="fa-solid fa-shield-halved mr-1"></i> Strategic Case Study #02
+            </span>
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-[1.15] tracking-tight drop-shadow-md">The Node Isolation Strategy: Decoding the $7B Throughput Arbitrage</h1>
+            <p class="text-lg text-blue-100 leading-relaxed opacity-95 max-w-3xl drop-shadow-sm">
+                What Big Pharma’s recent acquisitions teach us about eliminating execution bottlenecks, and how FoodTech founders must use Strategic Vendor Architecture (SVA) to protect margins.
+            </p>
+        </div>
+    </header>
+
+    <!-- Report Body -->
+    <main class="py-16 px-6">
+        <article class="max-w-4xl mx-auto bg-white border border-[#DADADA] rounded-xl shadow-sm p-8 md:p-16 report-content">
+            
+            <div class="flex items-center justify-between border-b border-[#E6EEF4] pb-4 mb-8">
+                <p class="text-[#6B6B6B] font-bold text-sm uppercase tracking-widest">Authored by Michael Bao | Independent Supply Chain Architect | April 2026</p>
+                <div class="hidden md:flex gap-2">
+                    <span class="px-2 py-0.5 bg-slate-100 text-slate-500 text-[10px] font-bold uppercase rounded">Supply Chain Strategy</span>
+                    <span class="px-2 py-0.5 bg-slate-100 text-slate-500 text-[10px] font-bold uppercase rounded">IP Defense</span>
+                </div>
+            </div>
+
+            <div class="quote-block">
+                <p>"In global cross-border manufacturing, a Non-Disclosure Agreement (NDA) is a necessary legal baseline, but it is insufficient to prevent physical leakage. True Intellectual Property protection is not merely contractual; it is architectural."</p>
+            </div>
+
+            <h2>1. The $7 Billion Lesson in "Throughput Arbitrage"</h2>
+            <p>The pharmaceutical industry is currently witnessing a fundamental shift from "Molecule Discovery" to "Execution Architecture." A prime indicator is Eli Lilly’s recent strategic acquisition of Kelonia Therapeutics, valued at up to $7 billion<span class="citation"><a href="#ref1">[1]</a></span>.</p>
+            <p>To the untrained eye, this appears as another massive biotech valuation. However, supply chain architects recognize a deeper motive: Eli Lilly did not just buy a molecule; they bought the elimination of a structural bottleneck. Traditional CAR-T therapies (Ex Vivo) operate as a highly complex, node-heavy logistical service—extracting cells, engineering them in external labs, and re-infusing them. This creates a "Vein-to-Vein" cycle plagued by margin erosion and severe scalability limits.</p>
+            <p>Kelonia’s iGPS platform allows for genetic engineering directly inside the patient's body (In Vivo). By eliminating the external manufacturing node entirely, Lilly executed what we term <strong>Throughput Arbitrage</strong><span class="citation"><a href="#ref2">[2]</a></span>. They bypassed the physical rate-limiting step, transforming a bespoke, unscalable service into a mass-deployable product. The core lesson here transcends pharmaceuticals: In any high-stakes manufacturing sector, value migrates to whoever controls—or eliminates—the operational bottleneck.</p>
+
+            <figure class="my-12">
+                <div class="p-2 border border-[#DADADA] rounded-lg bg-[#E6EEF4] shadow-sm">
+                    <img src="node-isolation-viz.webp" alt="SVA Node Architecture" class="w-full aspect-video object-cover object-center rounded shadow-inner" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="display:none;" class="aspect-video w-full flex-col items-center justify-center bg-[#0A3A5A]/5 rounded">
+                        <i class="fa-solid fa-network-wired text-[#1F5C85] text-3xl mb-3 opacity-30"></i>
+                        <span class="text-[#6B6B6B] text-xs font-bold tracking-widest uppercase">Waiting for 16:9 node-isolation-viz.webp</span>
+                    </div>
+                </div>
+                <!-- 图注字体已调整为 font-normal -->
+                <figcaption class="text-[#6B6B6B] text-xs mt-3 text-center font-normal tracking-wide">Figure 1: Strategic Vendor Architecture (SVA) - Decoupling the formulation blueprint from physical mass production.</figcaption>
+            </figure>
+
+            <h2>2. The Myth of the "Master OEM" in FoodTech</h2>
+            <p>While Functional Brands and FoodTech startups operate in a different sector, the physical laws of scaling remain identical. In the pursuit of rapid market entry, many brands fall into the trap of the "Master OEM." A Master OEM acts as a singular touchpoint: they source the raw materials, manage the complex bio-active blending, control the thermodynamic parameters of mass production, and handle final retail packaging.</p>
+            <p>From a purely administrative standpoint, this appears highly efficient. However, architecturally, relying on a Master OEM creates a <strong>single point of failure for Intellectual Property (IP)</strong><span class="citation"><a href="#ref3">[3]</a></span>. When a single factory possesses the complete technical blueprint of your product—including formulation ratios, supplier origins, and rate-limiting processing temperatures—the brand's defensive moat evaporates.</p>
+            <p>If a brand's value proposition is tied to a specific clinical efficacy achieved through a highly specific botanical extraction, a unified OEM can theoretically reverse-engineer that margin within one production cycle. This is where the structural defense of SVA becomes mandatory.</p>
+
+            <h2>3. Implementing Node Isolation</h2>
+            <p>To establish true operational security, brands must apply the principles of Throughput Arbitrage via <strong>Strategic Vendor Architecture (SVA)</strong>. SVA is a defensive manufacturing framework that treats a supply chain not as a linear pipe, but as a series of isolated, compartmentalized "Black Box" nodes.</p>
+            <p>Under a mature SVA, no single entity in the supply chain—other than the brand owner and their independent Supply Chain Architect—possesses the complete technical overview. The physical execution is decoupled into distinct pillars:</p>
+            <ul>
+                <li><strong>Node A: The Proprietary Pre-mix.</strong> Controlled at a specialized upstream lab. This facility only receives instructions on ratios and homogenization parameters. They are entirely unaware of the final retail application.</li>
+                <li><strong>Node B: The Encapsulation Matrix.</strong> A secondary facility where the fragile bio-active compound is protected (e.g., liposomal delivery) using thermal parameters that are strictly audited.</li>
+                <li><strong>Node C: The Physical Processing Floor.</strong> The mass production facility handles heat, pressure, and flow. Crucially, the raw material inputs arrive from Nodes A and B as "Ghost Components" or coded batches. The factory focuses purely on Thermodynamic Parity Index (TPI) adherence.</li>
+            </ul>
+
+            <figure class="my-12">
+                <div class="p-2 border border-[#DADADA] rounded-lg bg-[#E6EEF4] shadow-sm">
+                    <img src="clean-factory-line.webp" alt="Clean Factory Line Execution" class="w-full aspect-video object-cover object-center rounded shadow-inner" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="display:none;" class="aspect-video w-full flex-col items-center justify-center bg-[#0A3A5A]/5 rounded">
+                        <i class="fa-solid fa-industry text-[#1F5C85] text-3xl mb-3 opacity-30"></i>
+                        <span class="text-[#6B6B6B] text-xs font-bold tracking-widest uppercase">Waiting for 16:9 clean-factory-line.webp</span>
+                    </div>
+                </div>
+                <!-- 图注字体已调整为 font-normal -->
+                <figcaption class="text-[#6B6B6B] text-xs mt-3 text-center font-normal tracking-wide">Figure 2: Execution Fidelity - Independent auditing of mass flow meters and shear stress logs on the factory floor.</figcaption>
+            </figure>
+
+            <h2>4. The Architect’s Mandate: Beyond the Scale-up</h2>
+            <p>Node Isolation requires more than just logistical redirection; it demands continuous, independent physical oversight. A common misconception is that a Supply Chain Architect merely assists in the R&D scale-up phase. However, effectively translating a pilot SOP to a 50,000L commercial validation run is only the starting line—a task that elite contract manufacturers and brand scientists are already equipped to handle together. The true vulnerability in cross-border manufacturing lies in <strong>Batch-to-Batch Execution Drift</strong> during long-term mass production.</p>
+            <p>Elite factories possess strictly validated commercial SOPs and extensive internal monitoring systems. Yet, standard third-party audits only verify the <em>paperwork</em> of those SOPs periodically. They fail to scrutinize the grueling physical grind of continuous production. When a facility is pressured by capacity constraints or generic efficiency KPIs, microscopic execution deviations may occur—a subtle shift in chilling rates to speed up tank turnovers, <strong>insufficient precision monitoring leading to critical equipment parameter drifts</strong>, or quietly shifting production to unvetted sub-tier nodes during peak seasons.</p>
+            <p>This is where Strategic Vendor Architecture (SVA) proves its ultimate value. As your Fractional COO, our mandate is to architect the entire ecosystem: identifying and vetting the precise specialized nodes, decoupling critical IP, and maintaining relentless <strong>Execution Fidelity</strong><span class="citation"><a href="#ref4">[4]</a></span> batch after batch. We do not merely check if the factory filed the correct ISO paperwork; we act as your constant representative on the floor, analyzing the raw shear stress data and mass flow records during ongoing production to ensure the physical reality consistently defends your commercial intent.</p>
+            <p><strong>This brings us full circle to the $7 billion lesson from Eli Lilly.</strong> Lilly created exponential value by architecturally eliminating their most vulnerable, node-heavy bottleneck. While FoodTech and Functional brands cannot eliminate mass manufacturing entirely, they can achieve a similar "Throughput Arbitrage" by utilizing SVA to isolate critical IP nodes and enforcing relentless, independent oversight on the execution floor. For founders and C-Suite executives, the mandate is clear: You must own the physics of your supply chain, even if you do not own the machines. Transitioning to a Strategic Vendor Architecture is not merely a risk mitigation tactic; it is the ultimate defense of your valuation and your brand's future.</p>
+
+            <div class="mt-16 pt-8 border-t border-[#E6EEF4]" id="references">
+                <h3 class="text-sm font-bold text-[#0A3A5A] uppercase tracking-widest mb-4"><i class="fa-solid fa-book-bookmark mr-2 text-[#4F7FA3]"></i>References & Citations</h3>
+                <ol class="text-xs text-slate-500 space-y-3 list-decimal pl-4">
+                    <li id="ref1">Eli Lilly and Company. (2024). <em>Strategic Acquisition of Kelonia Therapeutics and iGPS® Platform</em>. Corporate Press Release & Investor Relations Data.</li>
+                    <li id="ref2">Pisano, G. P. (2006). <em>Science Business: The Promise, the Reality, and the Future of Biotech</em>. Harvard Business School Press. (Conceptual framing for throughput and scaling bottlenecks in biotechnology).</li>
+                    <li id="ref3">Chopra, S., & Meindl, P. (2015). <em>Supply Chain Management: Strategy, Planning, and Operation</em>. Pearson. (Analysis of structural vulnerabilities in unified vendor operations).</li>
+                    <li id="ref4">BENENOVO Strategic War Room. (2026). <em>The Ground-Truth Protocol: Internal Mandate for Supply Chain Architecture</em>. BENENOVO Corp. Internal Documentation.</li>
+                </ol>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- Call to Action / Formspree Section -->
+    <footer id="contact" class="bg-[#0A3A5A] pt-16 pb-12 px-6 border-t-[6px] border-[#1F5C85]">
+        <div class="max-w-4xl mx-auto text-center">
+            
+            <div class="mb-16">
+                <div class="max-w-md mx-auto bg-white/10 p-8 rounded-xl border border-white/20 backdrop-blur-sm shadow-xl text-left">
+                    <h3 class="text-xl font-bold text-white mb-2 text-center">Let's Bridge The Gap</h3>
+                    <p class="text-sm text-[#E6EEF4] opacity-80 mb-6 text-center">Submit your details for a baseline architectural check.</p>
+                    
+                    <form action="https://formspree.io/f/xzdjnjog" method="POST" class="flex flex-col gap-4">
+                        <div class="flex gap-3">
+                            <input type="text" name="First_Name" placeholder="First Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#4F7FA3] w-1/2 border border-slate-300">
+                            <input type="text" name="Last_Name" placeholder="Last Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#4F7FA3] w-1/2 border border-slate-300">
+                        </div>
+                        <input type="email" name="Email" placeholder="Your Work Email" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#4F7FA3] w-full border border-slate-300">
+                        <input type="text" name="Company" placeholder="Company Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#4F7FA3] w-full border border-slate-300">
+                        
+                        <select name="Biggest_Challenge" class="px-4 py-3 rounded text-slate-500 focus:text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#4F7FA3] w-full bg-white appearance-none cursor-pointer border border-slate-300">
+                            <option value="" disabled selected>What's your core execution challenge?</option>
+                            <option value="Formulation Scale-up & Active Degradation">Formulation Scale-up & Thermal Degradation</option>
+                            <option value="Supplier Consolidation & Comm. Chaos">Sub-tier Ecosystem Auditing & Compliance</option>
+                            <option value="Complex NPD & Bio-Tech Sourcing">Complex Bio-Tech Sourcing & IP Security</option>
+                            <option value="Navigating High MOQs at Elite Facilities">Navigating High MOQs at Elite Facilities</option>
+                            <option value="Batch-to-Batch QA & Compliance Drift">Batch-to-Batch QA & Scale-up Fidelity</option>
+                            <option value="Other specific challenge">Other specific challenge</option>
+                            <option value="Just exploring right now">Just exploring right now</option>
+                        </select>
+
+                        <button type="submit" class="bg-white text-[#0A3A5A] font-black text-lg py-3 px-6 rounded shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all w-full mt-2 uppercase tracking-wide">
+                            Submit Request
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="mt-6">
+                    <a href="mailto:service@supply.benenovo.com" class="text-[#E6EEF4] opacity-80 hover:opacity-100 hover:text-white text-sm transition">Or email directly: service@supply.benenovo.com</a>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-white tracking-wide mb-3">BENENOVO Supply Chain Solutions</h2>
+                <p class="text-xs md:text-sm text-[#E6EEF4] opacity-80 font-bold tracking-[0.25em] uppercase mb-10">A BENENOVO Corp. Company</p>
+                <p class="text-[10px] md:text-xs text-white/40 uppercase tracking-widest">&copy; 2026 BENENOVO CORP. | BEIJING • CHINA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('hamburger-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('hamburger-icon');
+        const links = document.querySelectorAll('.mobile-link');
+        function toggleMenu() {
+            menu.classList.toggle('open');
+            if (menu.classList.contains('open')) { icon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); } 
+            else { icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); }
+        }
+        btn.addEventListener('click', toggleMenu);
+        links.forEach(link => { link.addEventListener('click', () => { if (menu.classList.contains('open')) toggleMenu(); }); });
+        
+        // Formspree AJAX Submission interceptor
+        const form = document.querySelector('form[action^="https://formspree.io"]');
+        if(form) {
+            form.addEventListener("submit", async function(event) {
+                event.preventDefault(); 
+                
+                const data = new FormData(event.target);
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Processing...';
+                submitBtn.disabled = true;
+
+                fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    if (response.ok) {
+                        window.location.href = "thank-you-contact.html";
+                    } else {
+                        alert("Oops! There was a problem submitting your request.");
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }
+                }).catch(error => {
+                    alert("Oops! Network error. Please try again.");
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+            });
+        }
+    </script>
+</body>
+</html>
