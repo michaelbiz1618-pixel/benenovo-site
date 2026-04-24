@@ -17,12 +17,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: 'Open Sans', sans-serif; }
-        :root { --rational-blue: #0A3A5A; --level1-blue: #1F5C85; --level2-blue: #4F7FA3; --bg-blue: #E6EEF4; }
-        .text-rational { color: var(--rational-blue); } .bg-rational { background-color: var(--rational-blue); } .bg-surface { background-color: var(--bg-blue); }
+        /* 遵循品牌手册附件二：辅助色阶系统 */
+        :root { 
+            --rational-blue: #0A3A5A; 
+            --level1-blue: #1F5C85; 
+            --level2-blue: #4F7FA3; 
+            --bg-blue: #E6EEF4; 
+        }
+        .text-rational { color: var(--rational-blue); } 
+        .bg-rational { background-color: var(--rational-blue); } 
+        .bg-surface { background-color: var(--bg-blue); }
         
-        /* 统一Logo基因：加入 !important 强制锁定全局字号与字重，彻底防止层叠样式污染 */
+        /* 遵循品牌手册附件一：网页端 Logo 右对齐豁免与字重补偿法则 */
         .logo-container { display: flex; flex-direction: column; line-height: 0.85; padding-top: 4px; position: relative; z-index: 60; }
-        .logo-main { font-family: 'Open Sans', sans-serif !important; font-weight: 600 !important; color: #0A3A5A !important; font-size: 1.8rem !important; letter-spacing: 0.01em !important; }
+        .logo-main { font-family: 'Open Sans', sans-serif !important; font-weight: 600 !important; color: #0A3A5A !important; font-size: 1.8rem !important; letter-spacing: 0.05em !important; }
         @media (min-width: 768px) { .logo-main { font-size: 2.2rem !important; } }
         .logo-sub { font-family: 'Open Sans', sans-serif !important; font-weight: 400 !important; color: #0A3A5A !important; font-size: 1rem !important; margin-top: 2px; align-self: flex-end; opacity: 0.95; letter-spacing: 0.02em !important; }
         @media (min-width: 768px) { .logo-sub { font-size: 1.2rem !important; } }
@@ -90,8 +98,7 @@
         <div class="absolute top-0 right-0 w-1/2 md:w-1/3 h-full bg-[#dae6f0] -z-10 skew-x-12 opacity-50"></div>
     </header>
 
-    <!-- 核心扩容区：仅修改了这里，将单卡片扩展为完美的 3 卡片网格，原汁原味保留深蓝渐变 -->
-    <section class="bg-gradient-to-r from-[#0A3A5A] to-[#1F5C85] py-16 px-6 relative overflow-hidden shadow-inner border-y border-[#06263b]">
+    <section id="insights" class="bg-gradient-to-r from-[#0A3A5A] to-[#1F5C85] py-16 px-6 relative overflow-hidden shadow-inner border-y border-[#06263b]">
         <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
         <div class="max-w-6xl mx-auto relative z-10">
             <div class="text-center mb-10">
@@ -100,7 +107,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Report 01 (Original) -->
+                <!-- Report 01: Execution Gap -->
                 <div class="bg-white/10 border border-white/20 p-6 rounded-xl backdrop-blur-sm hover:bg-white/15 transition-all flex flex-col">
                     <span class="inline-block px-3 py-1 bg-white/20 text-blue-100 text-[10px] font-bold tracking-widest uppercase rounded mb-4 border border-white/20 self-start">
                         <i class="fa-solid fa-download mr-1"></i> Report #01
@@ -112,7 +119,7 @@
                     </a>
                 </div>
 
-                <!-- Report 02 (New: Node Isolation) -->
+                <!-- Report 02: Node Isolation -->
                 <div class="bg-white/10 border border-white/20 p-6 rounded-xl backdrop-blur-sm hover:bg-white/15 transition-all flex flex-col">
                     <span class="inline-block px-3 py-1 bg-white/20 text-blue-100 text-[10px] font-bold tracking-widest uppercase rounded mb-4 border border-white/20 self-start">
                         <i class="fa-solid fa-shield-halved mr-1"></i> Case Study #02
@@ -124,7 +131,7 @@
                     </a>
                 </div>
 
-                <!-- Report 03 (New: 50,000L Audit) -->
+                <!-- Report 03: 50,000L Fermentation -->
                 <div class="bg-[#1F5C85]/50 border border-white/30 p-6 rounded-xl backdrop-blur-sm hover:bg-[#1F5C85]/70 transition-all flex flex-col relative shadow-[0_0_15px_rgba(255,255,255,0.05)]">
                     <span class="inline-block px-3 py-1 bg-white/20 text-blue-100 text-[10px] font-bold tracking-widest uppercase rounded mb-4 border border-white/20 self-start">
                         <i class="fa-solid fa-lock mr-1"></i> Premium Audit #03
@@ -138,7 +145,6 @@
             </div>
         </div>
     </section>
-    <!-- 扩容区结束 -->
 
     <section id="architect" class="py-20 md:py-24 px-6 border-b border-[#DADADA] bg-white">
         <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
@@ -206,47 +212,62 @@
         </div>
     </section>
 
+    <!-- Call to Action / Formspree Section -->
     <footer id="contact" class="bg-[#0A3A5A] pt-16 pb-12 px-6 border-t-[6px] border-[#1F5C85]">
         <div class="max-w-4xl mx-auto text-center">
             
             <div class="mb-16">
                 <div class="max-w-md mx-auto bg-white/10 p-8 rounded-xl border border-white/20 backdrop-blur-sm shadow-xl text-left">
                     <h3 class="text-xl font-bold text-white mb-2 text-center">Let's Bridge The Gap</h3>
-                    <p class="text-sm text-blue-200 mb-6 text-center">Submit your details for a baseline architectural check.</p>
+                    <p class="text-sm text-[#E6EEF4] opacity-80 mb-6 text-center">Submit your details for a baseline architectural check.</p>
                     
                     <form action="https://formspree.io/f/xzdjnjog" method="POST" class="flex flex-col gap-4">
-                        <div class="flex gap-3">
-                            <input type="text" name="First_Name" placeholder="First Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 w-1/2">
-                            <input type="text" name="Last_Name" placeholder="Last Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 w-1/2">
-                        </div>
-                        <input type="email" name="Email" placeholder="Your Work Email" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
-                        <input type="text" name="Company" placeholder="Company Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full">
+                        <!-- 隐藏的锚点追踪 -->
+                        <input type="hidden" name="Lead_Source" value="BENENOVO_Homepage_Bottom_Form">
                         
-                        <select name="Biggest_Challenge" class="px-4 py-3 rounded text-slate-500 focus:text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 w-full bg-white appearance-none cursor-pointer">
+                        <div class="flex gap-3">
+                            <input type="text" name="First_Name" placeholder="First Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#4F7FA3] w-1/2 border border-slate-300">
+                            <input type="text" name="Last_Name" placeholder="Last Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#4F7FA3] w-1/2 border border-slate-300">
+                        </div>
+                        
+                        <!-- 植入双保险报错容器 -->
+                        <div class="flex flex-col gap-1 w-full relative">
+                            <input type="email" id="corpEmail" name="Email" placeholder="Your Work Email*" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#4F7FA3] w-full border border-slate-300 transition-colors">
+                            <p id="emailError" class="text-red-400 text-xs hidden font-semibold mt-1">Corporate email required for SVA audits.</p>
+                        </div>
+                        
+                        <input type="text" name="Company" placeholder="Company Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#4F7FA3] w-full border border-slate-300">
+                        
+                        <select name="Biggest_Challenge" class="px-4 py-3 rounded text-slate-500 focus:text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#4F7FA3] w-full bg-white appearance-none cursor-pointer border border-slate-300">
                             <option value="" disabled selected>What's your core execution challenge?</option>
                             <option value="Formulation Scale-up & Active Degradation">Formulation Scale-up & Thermal Degradation</option>
-                            <option value="Supplier Consolidation & Comm. Chaos">Sub-tier Ecosystem Auditing & Compliance</option>
-                            <option value="Complex NPD & Bio-Tech Sourcing">Complex Bio-Tech Sourcing & IP Security</option>
+                            <option value="Sub-tier Ecosystem Auditing & Compliance">Sub-tier Ecosystem Auditing & Compliance</option>
+                            <option value="Complex Bio-Tech Sourcing & IP Security">Complex Bio-Tech Sourcing & IP Security</option>
                             <option value="Navigating High MOQs at Elite Facilities">Navigating High MOQs at Elite Facilities</option>
-                            <option value="Batch-to-Batch QA & Compliance Drift">Batch-to-Batch QA & Scale-up Fidelity</option>
+                            <option value="Batch-to-Batch QA & Scale-up Fidelity">Batch-to-Batch QA & Scale-up Fidelity</option>
                             <option value="Other specific challenge">Other specific challenge</option>
                             <option value="Just exploring right now">Just exploring right now</option>
                         </select>
 
                         <button type="submit" class="bg-white text-[#0A3A5A] font-black text-lg py-3 px-6 rounded shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all w-full mt-2 uppercase tracking-wide">
-                            Submit Request
+                            Commission SVA Audit
                         </button>
                     </form>
                 </div>
                 
                 <div class="mt-6">
-                    <a href="mailto:service@supply.benenovo.com" class="text-blue-200 hover:text-white text-sm transition">Or email directly: service@supply.benenovo.com</a>
+                    <a href="mailto:service@supply.benenovo.com" class="text-[#E6EEF4] opacity-80 hover:opacity-100 hover:text-white text-sm transition">Or email directly: service@supply.benenovo.com</a>
                 </div>
             </div>
 
             <div class="border-t border-white/10 pt-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-white tracking-wide mb-3">BENENOVO Supply Chain Solutions</h2>
-                <p class="text-xs md:text-sm text-blue-200 font-bold tracking-[0.25em] uppercase mb-10">A BENENOVO Corp. Company</p>
+                <div class="mb-4 flex justify-center">
+                    <div style="font-family: 'Open Sans', sans-serif; line-height: 0.85; padding-top: 4px; display: flex; flex-direction: column;">
+                        <span style="font-weight: 600; color: #ffffff; font-size: 1.8rem; letter-spacing: 0.05em;">BENENOVO</span>
+                        <span style="font-weight: 400; color: rgba(255,255,255,0.9); font-size: 1rem; margin-top: 2px; align-self: flex-end; letter-spacing: 0.02em;">Supply Chain</span>
+                    </div>
+                </div>
+                <p class="text-xs md:text-sm text-[#E6EEF4] opacity-80 font-bold tracking-[0.25em] uppercase mb-10 mt-6">A BENENOVO Corp. Company</p>
                 <p class="text-[10px] md:text-xs text-white/40 uppercase tracking-widest">&copy; 2026 BENENOVO CORP. | BEIJING • CHINA</p>
             </div>
         </div>
@@ -265,19 +286,43 @@
         btn.addEventListener('click', toggleMenu);
         links.forEach(link => { link.addEventListener('click', () => { if (menu.classList.contains('open')) toggleMenu(); }); });
         
-        // 架构师专属：AJAX 无缝表单提交拦截系统
+        // 架构师专属：企业邮箱拦截与防卫机制
+        const blockedDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com', 'qq.com', '163.com', '126.com'];
+        function isCorporateEmail(email) {
+            // 第一层防御：强制要求 @ 和 .后缀，限制为 2-6 位纯字母
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailRegex.test(email)) return false;
+
+            const domain = email.split('@')[1].toLowerCase();
+            return !blockedDomains.includes(domain);
+        }
+
         const form = document.querySelector('form[action^="https://formspree.io"]');
         if(form) {
             form.addEventListener("submit", async function(event) {
                 event.preventDefault(); // 拦截 Formspree 默认跳转
                 
-                const data = new FormData(event.target);
+                const emailInput = document.getElementById('corpEmail');
+                const emailError = document.getElementById('emailError');
                 const submitBtn = form.querySelector('button[type="submit"]');
                 const originalText = submitBtn.innerHTML;
+
+                // 执行双保险查验
+                if (!isCorporateEmail(emailInput.value)) {
+                    emailError.classList.remove('hidden');
+                    emailInput.classList.add('border-red-400', 'ring-red-400', 'ring-2');
+                    return; // 查杀低端流量和格式错误
+                }
+                
+                // 清除红灯
+                emailError.classList.add('hidden');
+                emailInput.classList.remove('border-red-400', 'ring-red-400', 'ring-2');
                 
                 // 按钮转为处理中状态
-                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Processing...';
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Authenticating...';
                 submitBtn.disabled = true;
+
+                const data = new FormData(event.target);
 
                 // 后台静默发送
                 fetch(event.target.action, {
@@ -286,8 +331,8 @@
                     headers: { 'Accept': 'application/json' }
                 }).then(response => {
                     if (response.ok) {
-                        // 成功后瞬间直达感谢页
-                        window.location.href = "https://benenovo.com/thank-you-contact.html";
+                        // 平滑跳转至感谢页 (相对路径)
+                        window.location.href = "thank-you-contact.html";
                     } else {
                         alert("Oops! There was a problem submitting your request.");
                         submitBtn.innerHTML = originalText;
