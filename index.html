@@ -10,264 +10,284 @@
       gtag('js', new Date());
       gtag('config', 'G-8M27KBJVPF');
     </script>
-    <title>BENENOVO Supply Chain | Independent Architect & Fractional COO</title>
-    <meta name="description" content="Bridging the Execution Gap from global blueprint to production reality. Strategic Vendor Architecture (SVA) and TPI audits for FoodTech & functional brands.">
+    <title>BENENOVO Supply Chain | Strategic Architecture & Execution Protocols</title>
+    <meta name="description" content="Orchestrating the Global Execution Ecosystem. BENENOVO deploys Strategic Vendor Architecture (SVA) and TPI audits to ensure physical execution parity for FoodTech and FMCG brands.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: 'Open Sans', sans-serif; }
-        /* 遵循品牌手册附件二：辅助色阶系统 */
+        body { font-family: 'Open Sans', sans-serif; background-color: #FFFFFF; color: #2E2E2E; }
+        
+        /* 宪法级色阶系统 */
         :root { 
             --rational-blue: #0A3A5A; 
             --level1-blue: #1F5C85; 
             --level2-blue: #4F7FA3; 
             --bg-blue: #E6EEF4; 
         }
+        
         .text-rational { color: var(--rational-blue); } 
         .bg-rational { background-color: var(--rational-blue); } 
         .bg-surface { background-color: var(--bg-blue); }
+        .text-level1 { color: var(--level1-blue); }
         
-        /* 遵循品牌手册附件一：网页端 Logo 右对齐豁免与字重补偿法则 */
-        .logo-container { display: flex; flex-direction: column; line-height: 0.85; padding-top: 4px; position: relative; z-index: 60; }
-        .logo-main { font-family: 'Open Sans', sans-serif !important; font-weight: 600 !important; color: #0A3A5A !important; font-size: 1.8rem !important; letter-spacing: 0.05em !important; }
+        /* Logo 光学修正版 */
+        .logo-container { display: flex; flex-direction: column; line-height: 1; padding-top: 4px; position: relative; z-index: 60; }
+        .logo-main { font-family: 'Open Sans', sans-serif !important; font-weight: 600 !important; color: #0A3A5A !important; font-size: 1.8rem !important; letter-spacing: 0.05em !important; white-space: nowrap; }
         @media (min-width: 768px) { .logo-main { font-size: 2.2rem !important; } }
-        .logo-sub { font-family: 'Open Sans', sans-serif !important; font-weight: 400 !important; color: #0A3A5A !important; font-size: 1rem !important; margin-top: 2px; align-self: flex-end; opacity: 0.95; letter-spacing: 0.02em !important; }
-        @media (min-width: 768px) { .logo-sub { font-size: 1.2rem !important; } }
-        
+        .logo-sub { font-family: 'Open Sans', sans-serif !important; font-weight: 500 !important; color: #0A3A5A !important; font-size: 1rem !important; margin-top: 3px; align-self: flex-end; opacity: 0.95; letter-spacing: 0.02em !important; white-space: nowrap; }
+        @media (min-width: 768px) { .logo-sub { font-size: 1.2rem !important; margin-top: 5px; } }
+
+        /* 底部反白 Logo 专属逻辑 */
+        .footer-logo-container { display: flex; flex-direction: column; line-height: 1; padding-top: 4px; }
+        .footer-logo-main { font-family: 'Open Sans', sans-serif !important; font-weight: 600 !important; color: #FFFFFF !important; font-size: 1.8rem !important; letter-spacing: 0.05em !important; white-space: nowrap; }
+        @media (min-width: 768px) { .footer-logo-main { font-size: 2.2rem !important; } }
+        .footer-logo-sub { font-family: 'Open Sans', sans-serif !important; font-weight: 500 !important; color: rgba(255,255,255,0.9) !important; font-size: 1rem !important; margin-top: 3px; align-self: flex-end; letter-spacing: 0.02em !important; white-space: nowrap; }
+        @media (min-width: 768px) { .footer-logo-sub { font-size: 1.2rem !important; margin-top: 5px; } }
+
         #mobile-menu { transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; max-height: 0; opacity: 0; overflow: hidden; }
         #mobile-menu.open { max-height: 300px; opacity: 1; }
-        .highlight-pillar { color: var(--level1-blue); font-weight: 700; }
+        
+        .protocol-card { border: 1px solid #DADADA; transition: all 0.3s ease; }
+        .protocol-card:hover { border-color: var(--level1-blue); box-shadow: 0 10px 30px rgba(10, 58, 90, 0.08); transform: translateY(-3px); }
     </style>
 </head>
-<body class="bg-white text-[#2E2E2E] antialiased">
+<body class="antialiased">
 
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#DADADA]">
         <div class="max-w-7xl mx-auto px-6 h-20 md:h-24 flex justify-between items-center">
-            <a href="#" class="logo-container group">
+            <a href="#" class="logo-container group hover:opacity-80 transition-opacity flex-shrink-0 mr-8">
                 <span class="logo-main">BENENOVO</span>
                 <span class="logo-sub">Supply Chain</span>
             </a>
-            <div class="hidden md:flex gap-10 text-sm font-medium text-[#6B6B6B] items-center">
-                <a href="report.html" class="text-[#1F5C85] font-bold hover:text-[#0A3A5A] transition-colors"><i class="fa-solid fa-file-pdf mr-1"></i> Free Report</a>
-                <a href="#architect" class="hover:text-[#0A3A5A] transition-colors">The Architect</a>
-                <a href="#services" class="hover:text-[#0A3A5A] transition-colors">Architecture Lines</a>
-                <a href="https://www.linkedin.com/in/michael-bao-benenovo" target="_blank" class="px-6 py-2.5 bg-[#4F7FA3] text-white rounded text-sm font-medium hover:bg-[#1F5C85] transition shadow-sm">
-                    Connect on LinkedIn
+            
+            <div class="hidden xl:flex gap-10 text-sm font-semibold text-[#6B6B6B] items-center uppercase tracking-wide">
+                <a href="#tracks" class="hover:text-rational transition-colors">Strategic Tracks</a>
+                <a href="#protocols" class="hover:text-rational transition-colors">Core Protocols</a>
+                <a href="https://michaelbao.io" target="_blank" class="text-level1 hover:text-rational transition-colors flex items-center">
+                    <i class="fa-solid fa-arrow-up-right-from-square mr-1.5"></i> michaelbao.io <span class="text-[10px] text-[#6B6B6B] ml-2 tracking-normal lowercase capitalize-first">(The Architect)</span>
+                </a>
+                <a href="#contact" class="px-6 py-2.5 bg-rational text-white rounded text-sm hover:bg-[#06263b] transition shadow-sm">
+                    Deploy Architecture
                 </a>
             </div>
-            <button id="hamburger-btn" class="md:hidden p-2 text-rational focus:outline-none relative z-60">
+            
+            <div class="hidden md:flex xl:hidden gap-6 text-[13px] font-semibold text-[#6B6B6B] items-center uppercase tracking-wide">
+                <a href="#tracks" class="hover:text-rational transition-colors">Strategic Tracks</a>
+                <a href="#protocols" class="hover:text-rational transition-colors">Protocols</a>
+                <a href="https://michaelbao.io" target="_blank" class="text-level1 hover:text-rational transition-colors">
+                    <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> michaelbao.io
+                </a>
+                <a href="#contact" class="px-4 py-2 bg-rational text-white rounded hover:bg-[#06263b] transition shadow-sm">
+                    Deploy
+                </a>
+            </div>
+            <button id="hamburger-btn" class="md:hidden p-2 text-rational focus:outline-none relative z-60 ml-auto">
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
+        
         <div id="mobile-menu" class="md:hidden bg-white border-b border-[#DADADA] absolute w-full left-0 top-[80px] shadow-xl">
             <div class="flex flex-col px-6 py-4 space-y-4 text-center">
-                <a href="report.html" class="mobile-link text-base font-bold text-[#1F5C85] hover:text-rational py-2 border-b border-slate-100">Free Industry Report</a>
-                <a href="#architect" class="mobile-link text-base font-medium text-[#2E2E2E] hover:text-rational py-2 border-b border-slate-100">The Architect</a>
-                <a href="#services" class="mobile-link text-base font-medium text-[#2E2E2E] hover:text-rational py-2 border-b border-slate-100">Architecture Lines</a>
-                <a href="https://www.linkedin.com/in/michael-bao-benenovo" target="_blank" class="mobile-link mt-2 px-6 py-3 bg-rational text-white rounded-lg text-base font-bold shadow-md">Connect on LinkedIn</a>
+                <a href="#tracks" class="mobile-link text-sm font-bold text-[#2E2E2E] hover:text-rational py-2 border-b border-slate-100 uppercase tracking-wide">Strategic Tracks</a>
+                <a href="#protocols" class="mobile-link text-sm font-bold text-[#2E2E2E] hover:text-rational py-2 border-b border-slate-100 uppercase tracking-wide">Core Protocols</a>
+                <a href="https://michaelbao.io" target="_blank" class="mobile-link text-sm font-bold text-level1 hover:text-rational py-2 border-b border-slate-100 uppercase tracking-wide">
+                    michaelbao.io <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+                </a>
+                <a href="#contact" class="mobile-link mt-2 px-6 py-3 bg-rational text-white rounded text-sm font-bold shadow-md uppercase tracking-wide">Deploy Architecture</a>
             </div>
         </div>
     </nav>
 
-    <header class="pt-32 md:pt-40 pb-20 md:pb-24 px-6 bg-surface relative overflow-hidden">
-        <div class="max-w-6xl mx-auto mt-4 md:mt-0 flex flex-col md:flex-row items-center gap-12">
-            <div class="w-full md:w-1/2 text-center md:text-left z-10">
-                <div class="inline-block px-4 py-1.5 border border-[#1F5C85] text-[#1F5C85] text-xs font-bold tracking-[0.15em] mb-6 md:mb-8 uppercase bg-white/50 backdrop-blur-sm">
-                    Fractional COO & Independent Architect
+    <header class="pt-32 md:pt-40 pb-20 md:pb-24 px-6 bg-rational relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-overlay"></div>
+        <div class="max-w-7xl mx-auto mt-4 md:mt-0 flex flex-col lg:flex-row items-center gap-12 relative z-10">
+            <div class="w-full lg:w-[55%] text-center lg:text-left">
+                <div class="inline-block px-4 py-1.5 border border-white/30 text-white/90 text-xs font-bold tracking-[0.15em] mb-6 md:mb-8 uppercase bg-white/5 backdrop-blur-sm rounded-sm shadow-sm">
+                    System Integration & Physical Auditing
                 </div>
-                <h1 class="text-4xl sm:text-5xl md:text-[3.5rem] font-bold tracking-tight mb-6 md:mb-8 leading-[1.15] text-rational">
-                    Bridging the <br><span class="text-[#1F5C85]">Execution Gap.</span>
+                <h1 class="text-4xl sm:text-5xl md:text-[3.8rem] font-bold tracking-tight mb-6 md:mb-8 leading-[1.1] text-white">
+                    Orchestrating the Global <br><span class="text-[#8FBCE6]">Execution Ecosystem.</span>
                 </h1>
-                <p class="text-lg text-[#475569] font-normal leading-relaxed mb-8">
-                    From global blueprint to production reality. We translate your commercial intent into flawless physical execution through <span class="highlight-pillar">Strategic Vendor Architecture (SVA)</span> and <span class="highlight-pillar">TPI Auditing</span> for the global FoodTech and functional F&B sectors.
+                <p class="text-lg md:text-xl text-blue-100/90 font-medium leading-relaxed mb-6 italic">
+                    "Strategy is the commercial intent. The supply chain is the grounded reality."
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="report.html" class="px-8 py-4 bg-rational text-white rounded font-semibold hover:bg-[#06263b] transition shadow-lg text-center uppercase tracking-wide">
-                        <i class="fa-solid fa-lock-open mr-2"></i> Unlock The Blueprint
+                <p class="text-base text-blue-100/70 font-normal leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
+                    We eliminate physical execution friction through strict Strategic Vendor Architecture (SVA) protocols and deep-tier thermodynamic auditing for the global <strong class="text-white">FoodTech</strong> and <strong class="text-white">functional F&B</strong> sectors.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#contact" class="px-8 py-4 bg-white text-rational rounded font-bold hover:bg-surface transition shadow-lg text-center uppercase tracking-wider text-sm">
+                        <i class="fa-solid fa-server mr-2"></i> Commission SVA Audit
                     </a>
                 </div>
             </div>
-            <div class="w-full md:w-1/2 z-10">
-                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-[#DADADA] bg-black aspect-video group">
+            <div class="w-full lg:w-[45%]">
+                <div class="relative rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-black aspect-video group">
                     <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/qD_n53YfQGc?rel=0&modestbranding=1" title="BENENOVO Supply Chain Architecture" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
-                <p class="text-xs text-center text-[#6B6B6B] mt-4 font-semibold uppercase tracking-widest animate-pulse">▶ Now Playing: The Execution Gap</p>
+                <p class="text-[10px] text-center text-blue-100/50 mt-4 font-bold uppercase tracking-[0.2em]"><i class="fa-solid fa-play mr-1 animate-pulse"></i> Now Playing: The Execution Gap</p>
             </div>
         </div>
-        <div class="absolute top-0 right-0 w-1/2 md:w-1/3 h-full bg-[#dae6f0] -z-10 skew-x-12 opacity-50"></div>
     </header>
 
-    <section id="insights" class="bg-gradient-to-r from-[#0A3A5A] to-[#1F5C85] py-16 px-6 relative overflow-hidden shadow-inner border-y border-[#06263b]">
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
-        <div class="max-w-6xl mx-auto relative z-10">
-            <div class="text-center mb-10">
-                <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">Industry Insights & Technical Reports</h2>
-                <p class="text-blue-200 text-sm md:text-base max-w-2xl mx-auto">Executive briefings on physical execution, intellectual property defense, and thermodynamic scaling in cross-border manufacturing.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Report 01: Execution Gap -->
-                <div class="bg-white/10 border border-white/20 p-6 rounded-xl backdrop-blur-sm hover:bg-white/15 transition-all flex flex-col">
-                    <span class="inline-block px-3 py-1 bg-white/20 text-blue-100 text-[10px] font-bold tracking-widest uppercase rounded mb-4 border border-white/20 self-start">
-                        <i class="fa-solid fa-download mr-1"></i> Report #01
-                    </span>
-                    <h3 class="text-xl font-bold text-white mb-3">The Execution Gap: 7 Hidden Risks</h3>
-                    <p class="text-blue-100 text-sm mb-6 flex-grow leading-relaxed">Stop managing chaos from thousands of miles away. Identify physical rate-limiting steps before they destroy your margin.</p>
-                    <a href="report.html" class="inline-flex items-center text-white font-bold text-sm hover:text-blue-200 transition-colors uppercase tracking-wide">
-                        Download PDF <i class="fa-solid fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-
-                <!-- Report 02: Node Isolation -->
-                <div class="bg-white/10 border border-white/20 p-6 rounded-xl backdrop-blur-sm hover:bg-white/15 transition-all flex flex-col">
-                    <span class="inline-block px-3 py-1 bg-white/20 text-blue-100 text-[10px] font-bold tracking-widest uppercase rounded mb-4 border border-white/20 self-start">
-                        <i class="fa-solid fa-shield-halved mr-1"></i> Case Study #02
-                    </span>
-                    <h3 class="text-xl font-bold text-white mb-3">The Node Isolation Strategy</h3>
-                    <p class="text-blue-100 text-sm mb-6 flex-grow leading-relaxed">Protecting Intellectual Property through Strategic Vendor Architecture (SVA) and the physical decoupling of OEM nodes.</p>
-                    <a href="report-node-isolation.html" class="inline-flex items-center text-white font-bold text-sm hover:text-blue-200 transition-colors uppercase tracking-wide">
-                        Read Full Insight <i class="fa-solid fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-
-                <!-- Report 03: 50,000L Fermentation -->
-                <div class="bg-[#1F5C85]/50 border border-white/30 p-6 rounded-xl backdrop-blur-sm hover:bg-[#1F5C85]/70 transition-all flex flex-col relative shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                    <span class="inline-block px-3 py-1 bg-white/20 text-blue-100 text-[10px] font-bold tracking-widest uppercase rounded mb-4 border border-white/20 self-start">
-                        <i class="fa-solid fa-lock mr-1"></i> Premium Audit #03
-                    </span>
-                    <h3 class="text-xl font-bold text-white mb-3">The 50,000L Reality Check</h3>
-                    <p class="text-blue-100 text-sm mb-6 flex-grow leading-relaxed">Utilizing the Thermodynamic Parity Index (TPI) to ensure high-efficacy lab results survive industrial fermentation scaling.</p>
-                    <a href="report-fermentation.html" class="inline-flex items-center text-white font-bold text-sm hover:text-blue-200 transition-colors uppercase tracking-wide">
-                        Request Access <i class="fa-solid fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="architect" class="py-20 md:py-24 px-6 border-b border-[#DADADA] bg-white">
-        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-            <div class="md:col-span-5 relative w-full max-w-sm mx-auto md:mx-0">
-                <div class="absolute inset-0 bg-[#f1f5f9] rounded-2xl transform translate-x-4 translate-y-4"></div>
-                <img src="michael_portrait.png" alt="Michael Bao" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" class="relative z-10 rounded-2xl shadow-lg w-full object-cover border border-slate-200">
-            </div>
-            <div class="md:col-span-7 md:pl-8">
-                <blockquote class="border-l-4 border-[#1F5C85] pl-4 italic text-xl text-rational font-semibold mb-6">
-                    "Strategy is the commercial intent. The supply chain is the grounded reality."
-                </blockquote>
-                <h2 class="text-3xl font-bold mb-6 text-rational">17 Years Navigating the Manufacturing Ecosystem</h2>
-                <div class="space-y-5 text-[#475569] leading-relaxed text-base">
-                    <p>Drawing on <strong class="text-rational font-bold">17 years deep</strong> within the China manufacturing ecosystem, I operate as an independent Supply Chain Architect. My focus is singular: Solving the <strong>"Execution Gap"</strong>—the brutal physical, thermodynamic, and compliance divergence between a global commercial blueprint and production reality.</p>
-                    <p>I bridge this gap through three proprietary architectural pillars:</p>
-                    <ul class="space-y-4 mt-4 bg-slate-50 p-6 rounded-xl border border-slate-100">
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#1F5C85] mt-1"><i class="fa-solid fa-shield-halved"></i></span>
-                            <div><strong class="text-rational">Strategic Vendor Architecture (SVA):</strong> <span class="text-sm block mt-0.5">Auditing sub-tier ecosystems and securing high-purity bio-actives.</span></div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#1F5C85] mt-1"><i class="fa-solid fa-temperature-half"></i></span>
-                            <div><strong class="text-rational">Thermodynamic Parity Index (TPI):</strong> <span class="text-sm block mt-0.5">Diagnosing scale-up fidelity to prevent thermal degradation of complex formulations.</span></div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#1F5C85] mt-1"><i class="fa-solid fa-file-contract"></i></span>
-                            <div><strong class="text-rational">IP Firewall & Regulatory Compliance:</strong> <span class="text-sm block mt-0.5">Establishing strict cross-border regulatory adherence and IP defense lines.</span></div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="mt-8 pt-6 border-t border-slate-200">
-                    <h3 class="font-bold text-rational text-lg">— Michael Bao</h3>
-                    <p class="text-xs font-bold text-[#94a3b8] uppercase tracking-widest mt-1">Founder & Independent Supply Chain Architect</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-20 md:py-24 px-6 bg-surface">
+    <section id="tracks" class="py-20 md:py-24 px-6 bg-surface border-b border-[#DADADA]">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-12 md:mb-16">
-                <h2 class="text-3xl font-bold text-rational">The Dual-Track Architecture</h2>
+                <h2 class="text-3xl font-bold text-rational tracking-tight">The Dual-Track Architecture</h2>
                 <p class="text-[#6B6B6B] mt-3 md:mt-4 text-sm md:text-base">Targeted execution models for distinct commercial intents.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                <div class="p-8 border border-[#DADADA] bg-white hover:border-rational transition duration-300 group rounded-xl shadow-sm hover:shadow-md">
-                    <div class="text-xs font-bold text-[#1F5C85] uppercase mb-4 tracking-widest">For Cross-border Distributors</div>
-                    <h3 class="text-2xl font-bold mb-4 text-rational group-hover:translate-x-1 transition-transform">The Technical Backbone</h3>
+                <div class="p-8 border border-[#DADADA] bg-white hover:border-level1 transition duration-300 group rounded shadow-sm hover:shadow-md">
+                    <div class="text-[10px] font-bold text-level1 uppercase mb-4 tracking-widest leading-relaxed">For Cross-border Distributors</div>
+                    <h3 class="text-2xl font-bold mb-6 text-rational group-hover:translate-x-1 transition-transform">The Technical Backbone</h3>
                     <ul class="space-y-4 text-[#2E2E2E]">
-                        <li class="flex items-start gap-3 text-sm"><span class="text-[#1F5C85] font-bold mt-0.5">01</span> <span>Strategic Vendor Architecture (SVA) & Sourcing</span></li>
-                        <li class="flex items-start gap-3 text-sm"><span class="text-[#1F5C85] font-bold mt-0.5">02</span> <span>IP Firewall & Technical Compliance</span></li>
-                        <li class="flex items-start gap-3 text-sm"><span class="text-[#1F5C85] font-bold mt-0.5">03</span> <span>Supply Chain Resilience & Margin Defense</span></li>
+                        <li class="flex items-start gap-3 text-sm"><span class="text-level1 font-bold mt-0.5">01</span> <span class="font-medium">Strategic Vendor Architecture (SVA) & Sourcing</span></li>
+                        <li class="flex items-start gap-3 text-sm"><span class="text-level1 font-bold mt-0.5">02</span> <span class="font-medium">IP Firewall & Technical Compliance</span></li>
+                        <li class="flex items-start gap-3 text-sm"><span class="text-level1 font-bold mt-0.5">03</span> <span class="font-medium">Supply Chain Resilience & Margin Defense</span></li>
                     </ul>
                 </div>
-                <div class="p-8 bg-white border border-[#DADADA] hover:border-rational transition duration-300 group rounded-xl shadow-sm hover:shadow-md">
-                    <div class="text-xs font-bold text-[#1F5C85] uppercase mb-4 tracking-widest">For FoodTech & Functional Brands</div>
-                    <h3 class="text-2xl font-bold mb-4 text-rational group-hover:translate-x-1 transition-transform">Fractional COO</h3>
+                <div class="p-8 bg-white border border-[#DADADA] hover:border-level1 transition duration-300 group rounded shadow-sm hover:shadow-md">
+                    <div class="text-[10px] font-bold text-level1 uppercase mb-4 tracking-widest leading-relaxed">For FoodTech & Functional Brands</div>
+                    <h3 class="text-2xl font-bold mb-6 text-rational group-hover:translate-x-1 transition-transform">Fractional COO</h3>
                     <ul class="space-y-4 text-[#2E2E2E]">
-                        <li class="flex items-start gap-3 text-sm"><span class="text-[#1F5C85] font-bold mt-0.5">01</span> <span>Bridging the Execution Gap</span></li>
-                        <li class="flex items-start gap-3 text-sm"><span class="text-[#1F5C85] font-bold mt-0.5">02</span> <span>Thermodynamic Parity Index (TPI) Audits</span></li>
-                        <li class="flex items-start gap-3 text-sm"><span class="text-[#1F5C85] font-bold mt-0.5">03</span> <span>End-to-End Scale-up Fidelity & Physical Execution</span></li>
+                        <li class="flex items-start gap-3 text-sm"><span class="text-level1 font-bold mt-0.5">01</span> <span class="font-medium">Bridging the Execution Gap</span></li>
+                        <li class="flex items-start gap-3 text-sm"><span class="text-level1 font-bold mt-0.5">02</span> <span class="font-medium">Thermodynamic Parity Index (TPI) Audits</span></li>
+                        <li class="flex items-start gap-3 text-sm"><span class="text-level1 font-bold mt-0.5">03</span> <span class="font-medium">End-to-End Scale-up Fidelity & Physical Execution</span></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action / Formspree Section -->
-    <footer id="contact" class="bg-[#0A3A5A] pt-16 pb-12 px-6 border-t-[6px] border-[#1F5C85]">
-        <div class="max-w-4xl mx-auto text-center">
+    <section id="protocols" class="py-20 md:py-24 px-6 bg-white border-b border-[#DADADA]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-rational mb-4 tracking-tight">Core Audit Protocols</h2>
+                <p class="text-[#6B6B6B] text-sm md:text-base max-w-2xl mx-auto">Standardized physical and structural defense mechanisms deployed across cross-border manufacturing nodes.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="protocol-card bg-surface/40 p-8 rounded flex flex-col">
+                    <span class="text-level1 font-bold text-[10px] tracking-widest uppercase mb-3 block border-b border-[#DADADA] pb-2">Protocol 01</span>
+                    <h3 class="text-xl font-bold text-rational mb-4 leading-snug">Cross-Border SVA <br>Risk Assessment</h3>
+                    <p class="text-[#475569] text-sm mb-6 flex-grow leading-relaxed">
+                        Beyond paper-based COAs. We audit the physical reality of your Tier-1 and Tier-2 ecosystem. We identify and eliminate thermal shear vulnerabilities, CIP/SIP sterilization drift, and unauthorized sub-tier capacity overflow.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center text-level1 font-bold text-xs hover:text-rational transition-colors uppercase tracking-widest">
+                        Deploy Protocol <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="protocol-card bg-surface/40 p-8 rounded flex flex-col">
+                    <span class="text-level1 font-bold text-[10px] tracking-widest uppercase mb-3 block border-b border-[#DADADA] pb-2">Protocol 02</span>
+                    <h3 class="text-xl font-bold text-rational mb-4 leading-snug">OEM Node Isolation <br>& IP Architecture</h3>
+                    <p class="text-[#475569] text-sm mb-6 flex-grow leading-relaxed">
+                        Dismantle the "Master OEM" single point of failure. We architect physically isolated supply chains—separating proprietary pre-mixing, encapsulation, final mass assembly, and other critical processes into disconnected blind nodes to secure your intellectual property.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center text-level1 font-bold text-xs hover:text-rational transition-colors uppercase tracking-widest">
+                        Deploy Protocol <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="protocol-card bg-surface/40 p-8 rounded flex flex-col border-t-4 border-t-level1">
+                    <span class="text-level1 font-bold text-[10px] tracking-widest uppercase mb-3 block border-b border-[#DADADA] pb-2">Protocol 03</span>
+                    <h3 class="text-xl font-bold text-rational mb-4 leading-snug">TPI Validation & <br>Fermentation Scale-up</h3>
+                    <p class="text-[#475569] text-sm mb-6 flex-grow leading-relaxed">
+                        Mandatory physical validation for precision fermentation and FoodTech scale-ups (50L to 50,000L). We calculate the Thermodynamic Parity Index (TPI) to prevent kLa mass transfer collapse and catastrophic yield erosion in industrial bioreactors.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center text-level1 font-bold text-xs hover:text-rational transition-colors uppercase tracking-widest">
+                        Deploy Protocol <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-rational py-14 px-6 border-b-[6px] border-level1 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+            <div class="text-center md:text-left">
+                <h3 class="text-white text-xl md:text-2xl font-bold mb-2">The Intelligence Matrix</h3>
+                <p class="text-blue-100/80 text-sm md:text-base font-medium">Looking for the theoretical blueprints, macro analyses, and execution logic behind our protocols?</p>
+            </div>
+            <div class="flex-shrink-0">
+                <a href="https://michaelbao.io" target="_blank" class="px-6 py-4 bg-white text-rational rounded font-bold hover:bg-surface transition shadow-xl uppercase tracking-widest text-xs flex items-center group">
+                    Access The Architect's Journal <i class="fa-solid fa-arrow-up-right-from-square ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="foundation" class="py-20 md:py-24 px-6 bg-white">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-4 relative w-full max-w-sm mx-auto md:mx-0">
+                <div class="absolute inset-0 bg-surface rounded transform translate-x-3 translate-y-3"></div>
+                <img src="michael_portrait.png" alt="Michael Bao" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" class="relative z-10 rounded shadow-md w-full object-cover border border-[#DADADA] grayscale-[20%]">
+            </div>
+            <div class="md:col-span-8 md:pl-8">
+                <h2 class="text-xs font-bold text-level1 uppercase tracking-widest mb-3 border-b border-surface pb-2 inline-block">The Architectural Foundation</h2>
+                <h3 class="text-2xl md:text-3xl font-bold mb-6 text-rational tracking-tight">17 Years Engineered into Protocols</h3>
+                <div class="space-y-4 text-[#475569] leading-relaxed text-sm md:text-base font-medium">
+                    <p>The BENENOVO Supply Chain ecosystem does not operate on standard consulting models. It is built upon the proprietary blueprints authored by Michael Bao.</p>
+                    <p>Drawing on 17 years deep within the China manufacturing matrix, Michael serves as the Chief Architect of the SVA frameworks. The mandate is singular: translating boardroom commercial intent into a heavily defended, zero-compromise physical reality.</p>
+                </div>
+                <div class="mt-8 pt-6 border-t border-surface">
+                    <h4 class="font-bold text-rational text-lg uppercase tracking-wide">Michael Bao</h4>
+                    <p class="text-[10px] font-bold text-level2 uppercase tracking-widest mt-1">Founder & Chief Supply Chain Architect</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-rational pt-20 pb-12 px-6 border-t-[6px] border-level1">
+        <div class="max-w-3xl mx-auto text-center">
             
             <div class="mb-16">
-                <div class="max-w-md mx-auto bg-white/10 p-8 rounded-xl border border-white/20 backdrop-blur-sm shadow-xl text-left">
-                    <h3 class="text-xl font-bold text-white mb-2 text-center">Let's Bridge The Gap</h3>
-                    <p class="text-sm text-[#E6EEF4] opacity-80 mb-6 text-center">Submit your details for a baseline architectural check.</p>
+                <div class="bg-white p-8 md:p-12 rounded shadow-2xl text-left border-t-4 border-level1 border-x border-b border-[#DADADA]">
+                    <h3 class="text-2xl font-bold text-rational mb-2 text-center tracking-tight">Initiate System Audit</h3>
+                    <p class="text-sm text-[#6B6B6B] mb-8 text-center font-medium">Submit your operational parameters for a baseline architectural check.</p>
                     
-                    <form action="https://formspree.io/f/xzdjnjog" method="POST" class="flex flex-col gap-4">
-                        <!-- 隐藏的锚点追踪 -->
-                        <input type="hidden" name="Lead_Source" value="BENENOVO_Homepage_Bottom_Form">
+                    <form action="https://formspree.io/f/xzdjnjog" method="POST" class="flex flex-col gap-5">
+                        <input type="hidden" name="Lead_Source" value="BENENOVO_Homepage_Audit_Protocol">
                         
-                        <div class="flex gap-3">
-                            <input type="text" name="First_Name" placeholder="First Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#4F7FA3] w-1/2 border border-slate-300">
-                            <input type="text" name="Last_Name" placeholder="Last Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#4F7FA3] w-1/2 border border-slate-300">
+                        <div class="flex gap-4">
+                            <input type="text" name="First_Name" placeholder="First Name" required class="px-4 py-3 rounded text-[#2E2E2E] focus:outline-none focus:ring-1 focus:ring-level1 w-1/2 border border-[#DADADA] bg-white text-sm font-medium">
+                            <input type="text" name="Last_Name" placeholder="Last Name" required class="px-4 py-3 rounded text-[#2E2E2E] focus:outline-none focus:ring-1 focus:ring-level1 w-1/2 border border-[#DADADA] bg-white text-sm font-medium">
                         </div>
                         
-                        <!-- 植入双保险报错容器 -->
                         <div class="flex flex-col gap-1 w-full relative">
-                            <input type="email" id="corpEmail" name="Email" placeholder="Your Work Email*" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#4F7FA3] w-full border border-slate-300 transition-colors">
-                            <p id="emailError" class="text-red-400 text-xs hidden font-semibold mt-1">Corporate email required for SVA audits.</p>
+                            <input type="email" id="corpEmail" name="Email" placeholder="Corporate Email Address*" required class="px-4 py-3 rounded text-[#2E2E2E] focus:outline-none focus:ring-1 focus:ring-level1 w-full border border-[#DADADA] bg-white transition-colors text-sm font-medium">
+                            <p id="emailError" class="text-red-500 text-[11px] hidden font-bold mt-1 uppercase tracking-wide">Corporate email domain required for protocol access.</p>
                         </div>
                         
-                        <input type="text" name="Company" placeholder="Company Name" required class="px-4 py-3 rounded text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#4F7FA3] w-full border border-slate-300">
+                        <input type="text" name="Company" placeholder="Corporate Entity / Brand Name" required class="px-4 py-3 rounded text-[#2E2E2E] focus:outline-none focus:ring-1 focus:ring-level1 w-full border border-[#DADADA] bg-white text-sm font-medium">
                         
-                        <select name="Biggest_Challenge" class="px-4 py-3 rounded text-slate-500 focus:text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#4F7FA3] w-full bg-white appearance-none cursor-pointer border border-slate-300">
-                            <option value="" disabled selected>What's your core execution challenge?</option>
-                            <option value="Formulation Scale-up & Active Degradation">Formulation Scale-up & Thermal Degradation</option>
-                            <option value="Sub-tier Ecosystem Auditing & Compliance">Sub-tier Ecosystem Auditing & Compliance</option>
-                            <option value="Complex Bio-Tech Sourcing & IP Security">Complex Bio-Tech Sourcing & IP Security</option>
-                            <option value="Navigating High MOQs at Elite Facilities">Navigating High MOQs at Elite Facilities</option>
-                            <option value="Batch-to-Batch QA & Scale-up Fidelity">Batch-to-Batch QA & Scale-up Fidelity</option>
-                            <option value="Other specific challenge">Other specific challenge</option>
-                            <option value="Just exploring right now">Just exploring right now</option>
+                        <select name="Protocol_Request" class="px-4 py-3 rounded text-[#2E2E2E] focus:outline-none focus:ring-1 focus:ring-level1 w-full bg-white appearance-none cursor-pointer border border-[#DADADA] text-sm font-medium">
+                            <option value="" disabled selected>Select SVA Audit Protocol...</option>
+                            <option value="Protocol 01: Cross-Border SVA Risk Assessment">Protocol 01: Cross-Border SVA Risk Assessment</option>
+                            <option value="Protocol 02: OEM Node Isolation & IP Architecture">Protocol 02: OEM Node Isolation & IP Architecture</option>
+                            <option value="Protocol 03: TPI Validation & Fermentation Scale-up">Protocol 03: TPI Validation & Fermentation Scale-up</option>
+                            <option value="General Architecture Consultation">General Architecture Consultation</option>
                         </select>
 
-                        <button type="submit" class="bg-white text-[#0A3A5A] font-black text-lg py-3 px-6 rounded shadow-[0_0_15px_rgba(255,255,255,0.2)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:scale-[1.02] transition-all w-full mt-2 uppercase tracking-wide">
-                            Commission SVA Audit
+                        <button type="submit" class="bg-rational text-white font-bold text-sm py-4 px-6 rounded hover:bg-[#06263b] transition-all w-full mt-4 uppercase tracking-widest shadow-md">
+                            Authorize Protocol
                         </button>
                     </form>
-                </div>
-                
-                <div class="mt-6">
-                    <a href="mailto:service@supply.benenovo.com" class="text-[#E6EEF4] opacity-80 hover:opacity-100 hover:text-white text-sm transition">Or email directly: service@supply.benenovo.com</a>
                 </div>
             </div>
 
             <div class="border-t border-white/10 pt-12">
                 <div class="mb-4 flex justify-center">
-                    <div style="font-family: 'Open Sans', sans-serif; line-height: 0.85; padding-top: 4px; display: flex; flex-direction: column;">
-                        <span style="font-weight: 600; color: #ffffff; font-size: 1.8rem; letter-spacing: 0.05em;">BENENOVO</span>
-                        <span style="font-weight: 400; color: rgba(255,255,255,0.9); font-size: 1rem; margin-top: 2px; align-self: flex-end; letter-spacing: 0.02em;">Supply Chain</span>
+                    <div class="footer-logo-container">
+                        <span class="footer-logo-main">BENENOVO</span>
+                        <span class="footer-logo-sub">Supply Chain</span>
                     </div>
                 </div>
-                <p class="text-xs md:text-sm text-[#E6EEF4] opacity-80 font-bold tracking-[0.25em] uppercase mb-10 mt-6">A BENENOVO Corp. Company</p>
+                <p class="text-xs md:text-sm text-blue-200/60 font-bold tracking-[0.25em] uppercase mb-8 mt-6">A BENENOVO Corp. Company</p>
+                <div class="flex justify-center gap-6 mb-8 text-white/80">
+                    <a href="mailto:service@supply.benenovo.com" class="hover:text-white transition"><i class="fa-solid fa-envelope text-lg"></i></a>
+                    <a href="http://linkedin.com/company/benenovo-corp" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                </div>
                 <p class="text-[10px] md:text-xs text-white/40 uppercase tracking-widest">&copy; 2026 BENENOVO CORP. | BEIJING • CHINA</p>
             </div>
         </div>
@@ -286,13 +306,10 @@
         btn.addEventListener('click', toggleMenu);
         links.forEach(link => { link.addEventListener('click', () => { if (menu.classList.contains('open')) toggleMenu(); }); });
         
-        // 架构师专属：企业邮箱拦截与防卫机制
         const blockedDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com', 'qq.com', '163.com', '126.com'];
         function isCorporateEmail(email) {
-            // 第一层防御：强制要求 @ 和 .后缀，限制为 2-6 位纯字母
             const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
             if (!emailRegex.test(email)) return false;
-
             const domain = email.split('@')[1].toLowerCase();
             return !blockedDomains.includes(domain);
         }
@@ -300,46 +317,41 @@
         const form = document.querySelector('form[action^="https://formspree.io"]');
         if(form) {
             form.addEventListener("submit", async function(event) {
-                event.preventDefault(); // 拦截 Formspree 默认跳转
+                event.preventDefault(); 
                 
                 const emailInput = document.getElementById('corpEmail');
                 const emailError = document.getElementById('emailError');
                 const submitBtn = form.querySelector('button[type="submit"]');
                 const originalText = submitBtn.innerHTML;
 
-                // 执行双保险查验
                 if (!isCorporateEmail(emailInput.value)) {
                     emailError.classList.remove('hidden');
-                    emailInput.classList.add('border-red-400', 'ring-red-400', 'ring-2');
-                    return; // 查杀低端流量和格式错误
+                    emailInput.classList.add('border-red-400', 'ring-1', 'ring-red-400');
+                    return; 
                 }
                 
-                // 清除红灯
                 emailError.classList.add('hidden');
-                emailInput.classList.remove('border-red-400', 'ring-red-400', 'ring-2');
+                emailInput.classList.remove('border-red-400', 'ring-1', 'ring-red-400');
                 
-                // 按钮转为处理中状态
                 submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Authenticating...';
                 submitBtn.disabled = true;
 
                 const data = new FormData(event.target);
 
-                // 后台静默发送
                 fetch(event.target.action, {
                     method: form.method,
                     body: data,
                     headers: { 'Accept': 'application/json' }
                 }).then(response => {
                     if (response.ok) {
-                        // 平滑跳转至感谢页 (相对路径)
                         window.location.href = "thank-you-contact.html";
                     } else {
-                        alert("Oops! There was a problem submitting your request.");
+                        alert("System Error. Please try again or contact dispatch.");
                         submitBtn.innerHTML = originalText;
                         submitBtn.disabled = false;
                     }
                 }).catch(error => {
-                    alert("Oops! Network error. Please try again.");
+                    alert("Network Error. Please try again.");
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
                 });
