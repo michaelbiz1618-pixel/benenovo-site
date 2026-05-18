@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8M27KBJVPF"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-8M27KBJVPF');
-    </script>
+    <script src="assets/gdpr.js"></script>
     <title>Protocol Authenticated | BENENOVO Supply Chain</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="robots" content="noindex,follow">
+    <meta name="description" content="BENENOVO Supply Chain intake confirmation page.">
+    <link rel="canonical" href="https://benenovo.com/thank-you-contact.html">
+    <meta name="theme-color" content="#0A3A5A">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="assets/site.css">
+    <link rel="stylesheet" href="assets/fonts.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: 'Open Sans', sans-serif; background-color: #F0F5F9; color: #2E2E2E; }
@@ -22,8 +22,12 @@
         .logo-container { display: flex; flex-direction: column; line-height: 1; padding-top: 4px; position: relative; z-index: 60; }
         .logo-main { font-family: 'Open Sans', sans-serif !important; font-weight: 600 !important; color: #0A3A5A !important; font-size: 1.8rem !important; letter-spacing: 0.05em !important; white-space: nowrap; }
         @media (min-width: 768px) { .logo-main { font-size: 2.2rem !important; } }
-        .logo-sub { font-family: 'Open Sans', sans-serif !important; font-weight: 500 !important; color: #0A3A5A !important; font-size: 1rem !important; margin-top: 3px; align-self: flex-end; opacity: 0.95; letter-spacing: 0.02em !important; white-space: nowrap; }
+        .logo-sub { font-family: 'Open Sans', sans-serif !important; font-weight: 500 !important; color: #0A3A5A !important; font-size: 1rem !important; margin-top: 3px; align-self: flex-start; margin-left: 60%; opacity: 0.95; letter-spacing: 0.02em !important; white-space: nowrap; }
         @media (min-width: 768px) { .logo-sub { font-size: 1.2rem !important; margin-top: 5px; } }
+        .system-grid {
+            background-image: linear-gradient(rgba(10,58,90,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(10,58,90,0.14) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -41,7 +45,7 @@
     </nav>
 
     <main class="flex-grow flex items-center justify-center px-6 py-16 md:py-20 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-overlay pointer-events-none"></div>
+        <div class="absolute inset-0 opacity-[0.05] system-grid mix-blend-overlay pointer-events-none"></div>
         
         <div class="max-w-2xl w-full bg-white rounded shadow-xl border border-[#DADADA] p-10 md:p-14 text-center relative z-10 border-t-4 border-t-[#1F5C85]">
             <div class="w-20 h-20 bg-[#E6EEF4] rounded-full flex items-center justify-center text-[#1F5C85] text-3xl mx-auto mb-8 border border-[#DADADA]">
@@ -50,14 +54,14 @@
             
             <h1 class="text-3xl md:text-4xl font-bold text-[#0A3A5A] mb-4 tracking-tight">Protocol Authenticated</h1>
             <p class="text-[#475569] mb-8 leading-relaxed font-medium">
-                Your operational parameters have been securely transmitted to the BENENOVO War Room. Our architects are reviewing your ecosystem configuration and <strong class="text-[#0A3A5A]">will dispatch the baseline audit framework within 24 hours.</strong>
+                Your operational parameters have been securely transmitted to the BENENOVO Architecture Desk. Our architects are reviewing your ecosystem configuration and <strong class="text-[#0A3A5A]">will dispatch the baseline audit framework within 24 hours.</strong>
             </p>
 
             <div class="border-t border-[#DADADA] pt-8 mt-4 bg-gray-50/50 -mx-10 md:-mx-14 -mb-10 md:-mb-14 p-10 md:p-14 rounded-b">
                 <p class="text-[10px] font-black text-[#1F5C85] uppercase tracking-[0.2em] mb-3">While the baseline check is prepared...</p>
                 <p class="text-sm text-[#6B6B6B] mb-6 font-medium">Review our declassified briefing on the 7 critical failure points where scale-ups collapse in cross-border manufacturing.</p>
                 
-                <a href="execution-gap-blueprint.pdf" target="_blank" class="inline-block bg-white text-[#0A3A5A] border border-[#0A3A5A] hover:bg-[#0A3A5A] hover:text-white font-bold text-xs py-4 px-8 rounded shadow-sm transition-all uppercase tracking-widest w-full md:w-auto">
+                <a href="execution-gap-blueprint.pdf" target="_blank" rel="noopener noreferrer" onclick="if(typeof gtag === 'function') { gtag('event', 'download_blueprint', { event_category: 'engagement', event_label: 'execution_gap_blueprint' }); }" class="inline-block bg-white text-[#0A3A5A] border border-[#0A3A5A] hover:bg-[#0A3A5A] hover:text-white font-bold text-xs py-4 px-8 rounded shadow-sm transition-all uppercase tracking-widest w-full md:w-auto">
                     <i class="fa-solid fa-file-pdf mr-2 text-rose-600"></i> Access Execution Blueprint
                 </a>
             </div>

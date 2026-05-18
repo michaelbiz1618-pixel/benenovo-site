@@ -1,0 +1,26 @@
+{
+  "name": "BENENOVO Supply Chain",
+  "short_name": "BENENOVO",
+  "description": "Strategic Vendor Architecture and execution protocols for FoodTech, functional F&B, and cross-border manufacturing teams.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#0A3A5A",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
