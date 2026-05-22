@@ -90,6 +90,89 @@
         
         .protocol-card { border: 1px solid #DADADA; transition: all 0.3s ease; }
         .protocol-card:hover { border-color: var(--level1-blue); box-shadow: 0 10px 30px rgba(10, 58, 90, 0.08); transform: translateY(-3px); }
+        .audience-list {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #DADADA;
+            display: grid;
+            gap: 0.55rem;
+            color: #5F6B73;
+            font-size: 0.78rem;
+            line-height: 1.55;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+        .audience-list span {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.55rem;
+        }
+        .audience-list span::before {
+            content: "";
+            flex: 0 0 0.32rem;
+            width: 0.32rem;
+            height: 0.32rem;
+            margin-top: 0.55rem;
+            border-radius: 999px;
+            background: var(--level1-blue);
+            opacity: 0.45;
+        }
+        .engagement-panel {
+            border: 1px solid #DADADA;
+            background: #FFFFFF;
+            border-radius: 4px;
+            box-shadow: none;
+            overflow: hidden;
+        }
+        .engagement-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+        .engagement-step {
+            position: relative;
+            padding: 2rem;
+            border-bottom: 1px solid #DADADA;
+            min-height: 220px;
+        }
+        .engagement-step:last-child { border-bottom: 0; }
+        .engagement-step::before {
+            content: "";
+            position: absolute;
+            top: 2rem;
+            bottom: 2rem;
+            left: 1.35rem;
+            width: 2px;
+            background: var(--level1-blue);
+            opacity: 0.58;
+        }
+        .engagement-index {
+            display: block;
+            margin-bottom: 1.25rem;
+            color: var(--level1-blue);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+        .engagement-step h3 {
+            margin-bottom: 0.85rem;
+            color: var(--rational-blue);
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.35;
+        }
+        .engagement-step p {
+            color: #475569;
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 1.72;
+        }
+        @media (min-width: 768px) {
+            .engagement-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .engagement-step { border-bottom: 0; border-right: 1px solid #DADADA; }
+            .engagement-step:last-child { border-right: 0; }
+        }
         .system-grid {
             background-image: linear-gradient(rgba(255,255,255,0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.22) 1px, transparent 1px);
             background-size: 28px 28px;
@@ -121,7 +204,7 @@
                     <i class="fa-solid fa-arrow-up-right-from-square mr-1.5"></i> michaelbao.io <span class="text-[10px] text-[#6B6B6B] ml-2 tracking-normal lowercase capitalize-first">(The Architect)</span>
                 </a>
                 <a href="#contact" class="px-6 py-2.5 bg-rational text-white rounded text-sm hover:bg-[#06263b] transition shadow-sm">
-                    Initiate System Audit
+                    Initiate SVA Assessment
                 </a>
             </div>
             
@@ -147,7 +230,7 @@
                 <a href="https://michaelbao.io" target="_blank" rel="noopener noreferrer" class="mobile-link text-sm font-bold text-level1 hover:text-rational py-2 border-b border-slate-100 uppercase tracking-wide">
                     michaelbao.io <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
                 </a>
-                <a href="#contact" class="mobile-link mt-2 px-6 py-3 bg-rational text-white rounded text-sm font-bold shadow-md uppercase tracking-wide">Initiate System Audit</a>
+                <a href="#contact" class="mobile-link mt-2 px-6 py-3 bg-rational text-white rounded text-sm font-bold shadow-md uppercase tracking-wide">Initiate SVA Assessment</a>
             </div>
         </div>
     </nav>
@@ -201,6 +284,12 @@
                         <li class="flex items-start gap-3 text-sm"><span class="text-level1 font-bold mt-0.5">02</span> <span class="font-medium">IP Firewall & Technical Compliance</span></li>
                         <li class="flex items-start gap-3 text-sm"><span class="text-level1 font-bold mt-0.5">03</span> <span class="font-medium">Supply Chain Resilience & Margin Defense</span></li>
                     </ul>
+                    <div class="audience-list">
+                        <span>Importers and distributors</span>
+                        <span>Ingredient sourcing teams</span>
+                        <span>OEM-dependent operators</span>
+                        <span>Investors auditing supplier exposure</span>
+                    </div>
                 </div>
                 <div class="p-8 bg-white border border-[#DADADA] hover:border-level1 transition duration-300 group rounded shadow-sm hover:shadow-md">
                     <div class="text-[10px] font-bold text-level1 uppercase mb-4 tracking-widest leading-relaxed">For FoodTech & Functional Brands</div>
@@ -210,6 +299,12 @@
                         <li class="flex items-start gap-3 text-sm"><span class="text-level1 font-bold mt-0.5">02</span> <span class="font-medium">Thermodynamic Parity Index (TPI) Audits</span></li>
                         <li class="flex items-start gap-3 text-sm"><span class="text-level1 font-bold mt-0.5">03</span> <span class="font-medium">End-to-End Scale-up Fidelity & Physical Execution</span></li>
                     </ul>
+                    <div class="audience-list">
+                        <span>Founders approaching first commercial run</span>
+                        <span>Functional beverage brands facing co-manufacturing risk</span>
+                        <span>Precision fermentation and biotech scale-up teams</span>
+                        <span>Operators managing post-launch manufacturing drift</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -230,7 +325,7 @@
                         Beyond static paper-based COAs. We audit the fluid dynamics and thermodynamic reality of your Tier-1 and Tier-2 ecosystem. We systematically identify and eliminate structural blind spots—such as thermal shear vulnerabilities, sterilization drift, and unvetted sub-tier capacity overflow—before they trigger scale-up collapse.
                     </p>
                     <a href="#contact" data-protocol="Protocol 01: Cross-Border SVA Risk Assessment" onclick="if(typeof gtag==='function'){gtag('event','protocol_click',{event_category:'engagement',event_label:'Protocol_01_Cross_Border_SVA'});}" class="protocol-link inline-flex items-center text-level1 font-bold text-xs hover:text-rational transition-colors uppercase tracking-widest">
-                        Deploy Protocol <i class="fa-solid fa-arrow-right ml-2"></i>
+                        Request Assessment <i class="fa-solid fa-arrow-right ml-2"></i>
                     </a>
                 </div>
 
@@ -241,7 +336,7 @@
                         Dismantle the "Master OEM" single point of failure. We architect physically isolated supply chains—separating proprietary pre-mixing, encapsulation, final mass assembly, and other critical processes into disconnected blind nodes to secure your intellectual property.
                     </p>
                     <a href="#contact" data-protocol="Protocol 02: OEM Node Isolation & IP Architecture" onclick="if(typeof gtag==='function'){gtag('event','protocol_click',{event_category:'engagement',event_label:'Protocol_02_OEM_Node_Isolation'});}" class="protocol-link inline-flex items-center text-level1 font-bold text-xs hover:text-rational transition-colors uppercase tracking-widest">
-                        Deploy Protocol <i class="fa-solid fa-arrow-right ml-2"></i>
+                        Request Assessment <i class="fa-solid fa-arrow-right ml-2"></i>
                     </a>
                 </div>
 
@@ -252,8 +347,41 @@
                         Mandatory physical validation for precision fermentation and FoodTech scale-ups (50L to 50,000L). We calculate the Thermodynamic Parity Index (TPI) to prevent kLa mass transfer collapse and catastrophic yield erosion in industrial bioreactors.
                     </p>
                     <a href="#contact" data-protocol="Protocol 03: TPI Validation & Fermentation Scale-up" onclick="if(typeof gtag==='function'){gtag('event','protocol_click',{event_category:'engagement',event_label:'Protocol_03_TPI_Validation'});}" class="protocol-link inline-flex items-center text-level1 font-bold text-xs hover:text-rational transition-colors uppercase tracking-widest">
-                        Deploy Protocol <i class="fa-solid fa-arrow-right ml-2"></i>
+                        Request Assessment <i class="fa-solid fa-arrow-right ml-2"></i>
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-24 px-6 bg-surface border-b border-[#DADADA]">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-rational mb-4 tracking-tight">How Engagement Works</h2>
+                <p class="text-[#6B6B6B] text-sm md:text-base max-w-2xl mx-auto">A controlled review path from operational constraint to defensible execution architecture.</p>
+            </div>
+            <div class="engagement-panel">
+                <div class="engagement-grid">
+                <div class="engagement-step">
+                    <span class="engagement-index">Step 01 / Intake</span>
+                    <h3 class="text-lg font-bold text-rational mb-3">Submit Constraint</h3>
+                    <p class="text-[#475569] text-sm leading-relaxed">Share the manufacturing, scale-up, sourcing, or IP exposure that requires architectural review.</p>
+                </div>
+                <div class="engagement-step">
+                    <span class="engagement-index">Step 02 / Diagnostic</span>
+                    <h3 class="text-lg font-bold text-rational mb-3">Map Risk Surface</h3>
+                    <p class="text-[#475569] text-sm leading-relaxed">We review SVA, TPI, sub-tier opacity, and physical execution constraints before scope is confirmed.</p>
+                </div>
+                <div class="engagement-step">
+                    <span class="engagement-index">Step 03 / Architecture</span>
+                    <h3 class="text-lg font-bold text-rational mb-3">Define Protocol</h3>
+                    <p class="text-[#475569] text-sm leading-relaxed">The engagement is scoped around supplier architecture, OEM node isolation, or scale-up fidelity.</p>
+                </div>
+                <div class="engagement-step">
+                    <span class="engagement-index">Step 04 / Execution</span>
+                    <h3 class="text-lg font-bold text-rational mb-3">Support Deployment</h3>
+                    <p class="text-[#475569] text-sm leading-relaxed">BENENOVO supports implementation, review cadence, and operational risk control as required.</p>
+                </div>
                 </div>
             </div>
         </div>
@@ -262,12 +390,12 @@
     <section class="bg-rational py-14 px-6 border-b-[6px] border-level1 relative overflow-hidden">
         <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
             <div class="text-center md:text-left">
-                <h3 class="text-white text-xl md:text-2xl font-bold mb-2">Research & Intelligence Layer</h3>
+                <h3 class="text-white text-xl md:text-2xl font-bold mb-2">Michael Bao Research Library</h3>
                 <p class="text-blue-100/80 text-sm md:text-base font-medium">Looking for the theoretical blueprints, macro analyses, and execution logic behind our protocols?</p>
             </div>
             <div class="flex-shrink-0">
                 <a href="https://michaelbao.io" target="_blank" rel="noopener noreferrer" class="px-6 py-4 bg-white text-rational rounded font-bold hover:bg-surface transition shadow-xl uppercase tracking-widest text-xs flex items-center group">
-                    Review Public Intelligence Matrix <i class="fa-solid fa-arrow-up-right-from-square ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    Review Research Matrix <i class="fa-solid fa-arrow-up-right-from-square ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
                 </a>
             </div>
         </div>
@@ -299,8 +427,8 @@
             
             <div class="mb-16">
                 <div class="bg-white p-8 md:p-12 rounded shadow-2xl text-left border-t-4 border-level1 border-x border-b border-[#DADADA]">
-                    <h3 class="text-2xl font-bold text-rational mb-2 text-center tracking-tight">Initiate System Audit</h3>
-                    <p class="text-sm text-[#6B6B6B] mb-8 text-center font-medium">Submit your operational parameters for a baseline architectural check.</p>
+                    <h3 class="text-2xl font-bold text-rational mb-2 text-center tracking-tight">Initiate SVA Assessment</h3>
+                    <p class="text-sm text-[#6B6B6B] mb-8 text-center font-medium">Submit your operational parameters for a confidential baseline architectural check.</p>
                     
                     <form action="https://formspree.io/f/xzdjnjog" method="POST" class="flex flex-col gap-5">
                         <input type="hidden" name="Lead_Source" value="BENENOVO_Homepage_Audit_Protocol">
@@ -339,9 +467,12 @@
                         <textarea id="operationalConstraint" name="Primary_Execution_Constraint" rows="4" placeholder="Primary manufacturing / scale-up risk" class="px-4 py-3 rounded text-[#2E2E2E] focus:outline-none focus:ring-1 focus:ring-level1 w-full border border-[#DADADA] bg-white text-sm font-medium resize-y"></textarea>
 
                         <button type="submit" class="bg-rational text-white font-bold text-sm py-4 px-6 rounded hover:bg-[#06263b] transition-all w-full mt-4 uppercase tracking-widest shadow-md">
-                            Authorize Protocol
+                            Request Audit Review
                         </button>
                     </form>
+                    <p class="text-[11px] text-[#6B6B6B] leading-relaxed mt-6 text-center">
+                        Confidential review. Operational parameters are not publicly disclosed. Engagement scope is confirmed before any audit work begins.
+                    </p>
                 </div>
             </div>
 
