@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://benenovo.com/sitemap.xml
+User-agent: GPTBot
+Disallow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://www.benenovo.com/sitemap.xml
